@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<title>Hello World</title>
+	
+	<style>
+		div {
+			border-radius: 100px;
+			margin: auto;
+			margin-top: 200px;
+			width: 25%;
+			padding: 5px;
+			background-color: #eee;
+			animation-name: spin;
+			animation-duration: 10s;
+			animation-timing-function: cubic-bezier();
+			animation-iteration-count: infinite;
+		}
+		h1 {
+			text-align: center;
+			font-size: 72px;
+			font-family: helvetica;
+		}
+		@keyframes spin {
+			0% {margin-top: 200px;}
+			2% {margin-top: 150px;}
+			10% {margin-top: 400px;}
+			15% {margin-top: -1000px;}
+			25% {margin-top: -500px;}
+			26% {margin-top: 210px;}
+			27% {margin-top: 190px;}
+			28% {margin-top: 205px;}
+			29% {margin-top: 195px;}
+			30% {margin-top: 202px;}
+			31% {margin-top: 198px;}
+			32% {margin-top: 201px;}
+			33% {margin-top: 199px;}
+			34% {margin-top: 200px;}
+			50% {transform: rotate(0deg);}
+			55% {transform: rotate(10deg);}
+			65% {transform: rotate(-721deg);}
+			75% {transform: rotate(-720deg);}
+			80% {transform: rotate(-730deg);}
+			90% {transform: rotate(1deg);}
+			100% {transform: rotate(0deg);}
+		}
+	</style>
+
+	<body>
+		<div>
+			<h1>HELLO WORLD</h1>
+		</div>
+	</body>
+</html>
