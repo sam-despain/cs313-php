@@ -1,5 +1,3 @@
 <?php
-
-  phpinfo();
-
+include 'MainPage.php';
 ?>
