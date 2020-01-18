@@ -1,6 +1,18 @@
 body {
 	font-family: helvetica;
 }
+.logo {
+	padding: 20px;
+}
+.headerLink {
+	text-align: left;
+	padding: 20px;
+	border-radius: 100px;
+	font-size: 24px;
+}
+.headerLink:hover {
+	background-color: #aaa;
+}
 p {
 	text-align: left;
 }
@@ -10,14 +22,12 @@ div {
 	border: none;
 	text-align: center;
 	border-radius: 100px;
-	margin: auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	width: 25%;
+	margin: 20px;
 	padding: 25px;
 }
-div:hover {
-	font-weight:bold;
+.contents {
+	margin: auto;
+	width: 50%;
 }
 
 input {
@@ -54,10 +64,16 @@ h2 {
 	animation-timing-function: ease-in-out;
 }
 
-img {
+.me {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+@media screen and (max-width: 500px) {
+	.headerLink {
+		display: block;
+	}
 }
 
 @keyframes rock {
