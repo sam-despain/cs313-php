@@ -1,4 +1,4 @@
 <?php
-include 'header.php'
+include 'header.php';
 include 'home.php';
 ?>
