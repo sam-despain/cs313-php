@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Main Page</title>
+		<title>Samuel Despain | Home</title>
 		<link rel="stylesheet" type="text/css" href="mainStyle.css"/>
 	</head>
 	<body>

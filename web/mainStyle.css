@@ -1,8 +1,14 @@
 body {
 	font-family: helvetica;
 }
+a {
+	color: black;
+	text-decoration: none;
+}
 .logo {
-	padding: 20px;
+	padding-left: 25px;
+	width: 100px;
+	height: 100px;
 }
 .headerLink {
 	text-align: left;
@@ -70,7 +76,7 @@ h2 {
 	margin-right: auto;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 	.headerLink {
 		display: block;
 	}
