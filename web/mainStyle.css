@@ -1,23 +1,48 @@
 body {
 	font-family: helvetica;
 }
-a {
-	color: black;
-	text-decoration: none;
-}
 .logo {
 	padding-left: 25px;
 	width: 100px;
 	height: 100px;
+}
+a {
+	color: black;
+	text-decoration: none;
 }
 .headerLink {
 	text-align: left;
 	padding: 20px;
 	border-radius: 100px;
 	font-size: 24px;
+	transition: .5s;
 }
-.headerLink:hover {
-	background-color: #aaa;
+.headerLink:hover, button:hover {
+	background-color: #ddd;
+	transition: .5s;
+	animation-name: jump;
+	animation-duration: 2s;
+}
+button {
+	border: none;
+	cursor: pointer;
+	background-color: #eee;
+	border-radius: 100px;
+	outline: none;
+	transition: .5s;
+}
+.dropButton {
+	font-size: 24px;
+	width: 100%;
+	transition: .5s;
+	padding: 20px;
+}
+.contents {
+	margin: auto;
+	width: 50%;
+	max-height: 0;
+	overflow: hidden;
+	transition: 1s;
 }
 p {
 	text-align: left;
@@ -30,10 +55,6 @@ div {
 	border-radius: 100px;
 	margin: 20px;
 	padding: 25px;
-}
-.contents {
-	margin: auto;
-	width: 50%;
 }
 
 input {
@@ -83,6 +104,19 @@ h2 {
 }
 
 @keyframes rock {
-	from {transform: rotate(-5deg);}
-	to {transform: rotate(5deg);}
+	from {transform: rotate(-2deg);}
+	to {transform: rotate(2deg);}
+}
+@keyframes jump {
+	0% {font-size: 150%;}
+	10% {font-size: 130%;}
+	20% {font-size: 170%;}
+	30% {font-size: 140%;}
+	40% {font-size: 160%;}
+	50% {font-size: 145%;}
+	60% {font-size: 155%;}
+	70% {font-size: 147%;}
+	80% {font-size: 152%;}
+	90% {font-size: 149%;}
+	100% {font-size: 150%;}
 }
