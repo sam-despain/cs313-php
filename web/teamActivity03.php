@@ -19,5 +19,14 @@
 		<p>Major: <?php echo $major; ?></p>
 		<p>Comments: <p><?php echo $comments; ?></p></p>
 		<p>You visited: <?php echo $continents; ?></p>
+		<?php
+		if (isset($_POST["submit"])) {
+			if (!empty($_POST["continents"])) {
+				foreach($_POST["continents"] as $val) {
+					echo $val."<br/>";
+				}
+			}
+		}
+		?>
 	</body>
 </html>
