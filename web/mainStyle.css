@@ -2,13 +2,33 @@ body {
 	font-family: helvetica;
 }
 .logo {
-	padding-left: 25px;
+	padding: 25px;
 	width: 100px;
 	height: 100px;
 }
 a {
 	color: black;
 	text-decoration: none;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0px;
+	overflow: hidden;
+	border-radius: 100px;
+	background-color: #eee;
+}
+#hd {
+	float: left;
+}
+#hd a, #db {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+}
+#hd:hover {
+	display: block;
+	transition: .5s;
 }
 .headerLink {
 	text-align: left;
@@ -18,24 +38,18 @@ a {
 	transition: .5s;
 }
 .headerLink:hover, button:hover {
-	background-color: #ddd;
+	background-color: #ccc;
 	transition: .5s;
-	animation-name: jump;
-	animation-duration: 2s;
 }
 button {
 	border: none;
 	cursor: pointer;
+	font-size: 24px;
+	padding: 10px;
 	background-color: #eee;
 	border-radius: 100px;
 	outline: none;
 	transition: .5s;
-}
-.dropButton {
-	font-size: 24px;
-	width: 100%;
-	transition: .5s;
-	padding: 20px;
 }
 .contents {
 	margin: auto;
@@ -52,8 +66,8 @@ div {
 	background-color: #eee;
 	border: none;
 	text-align: center;
-	border-radius: 100px;
-	margin: 20px;
+	border-radius: 25px;
+	margin: 10px;
 	padding: 25px;
 }
 
@@ -76,20 +90,6 @@ input {
 h1, h2, h3 {
 	text-align: center;
 }
-h1 {
-	animation-duration: 3s;
-	animation-name: rock;
-	animation-direction: alternate;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
-}
-h2 {
-	animation-duration: 2s;
-	animation-name: rock;
-	animation-direction: alternate-reverse;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
-}
 
 .me {
 	display: block;
@@ -101,22 +101,4 @@ h2 {
 	.headerLink {
 		display: block;
 	}
-}
-
-@keyframes rock {
-	from {transform: rotate(-2deg);}
-	to {transform: rotate(2deg);}
-}
-@keyframes jump {
-	0% {font-size: 150%;}
-	10% {font-size: 130%;}
-	20% {font-size: 170%;}
-	30% {font-size: 140%;}
-	40% {font-size: 160%;}
-	50% {font-size: 145%;}
-	60% {font-size: 155%;}
-	70% {font-size: 147%;}
-	80% {font-size: 152%;}
-	90% {font-size: 149%;}
-	100% {font-size: 150%;}
 }
