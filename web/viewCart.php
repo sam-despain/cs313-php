@@ -22,7 +22,7 @@ include 'header.html';
 		}
 		?>
 		</ul>
-		<button>Back</button>
-		<button>Checkout</button>
+		<a href="browseItems.php">Back</a>
+		<a href="checkout.php">Checkout</a>
 	</body>
 </html>

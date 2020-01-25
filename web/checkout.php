@@ -8,7 +8,7 @@ include 'header.html';
 		<p>City:<input type="text" name="city"></p>
 		<p>State:<input type="text" name="state"></p>
 		<p>ZIP code:<input type="number" name="zipCode"></p>
-		<button href="viewCart.php">Back to cart</button>
-		<button>Complete purchase</button>
+		<a href="viewCart.php">Back to cart</a>
+		<a href="">Complete purchase</a>
 	</body>
 </html>
