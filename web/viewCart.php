@@ -8,7 +8,7 @@
 			$data = htmlspecialchars($data);
 			return $data;
 		}
-		$cartItems = testInput($cartItems)
+		$cartItems = testInput($cartItems);
 		if (isset($_POST["submit"])) {
 			if (!empty($cartItems)) {
 				foreach($cartItems as $val) {
