@@ -1,3 +1,6 @@
+<?php
+include 'header.html';
+?>
 <html>
 	<body>
 		<h1>Your Cart</h1>
@@ -10,8 +13,8 @@
 		}
 		$cartItems = testInput($_POST["items"]);
 		if (isset($_POST["submit"])) {
-			if (!empty($cartItems)) {
-				foreach($cartItems as $val) {
+			if (!empty($_POST["items"])) {
+				foreach($_POST["items"] as $val) {
 					echo "<p>".$val."</p>";
 				}
 			}
