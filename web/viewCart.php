@@ -8,10 +8,10 @@
 			$data = htmlspecialchars($data);
 			return $data;
 		}
-		$cartItems = testInput($cartItems);
+		$cartItems = testInput($_POST["items"]);
 		if (isset($_POST["submit"])) {
-			if (!empty($_POST["items"])) {
-				foreach($_POST["items"] as $val) {
+			if (!empty($cartItems)) {
+				foreach($cartItems as $val) {
 					echo "<p>".$val."</p>";
 				}
 			}
