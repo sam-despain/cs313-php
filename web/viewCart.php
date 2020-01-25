@@ -4,6 +4,7 @@ include 'header.html';
 <html>
 	<body>
 		<h1>Your Cart</h1>
+		<ul>
 		<?php
 		function testInput($data) {
 			$data = trim($data);
@@ -15,10 +16,13 @@ include 'header.html';
 		if (isset($_POST["submit"])) {
 			if (!empty($_POST["items"])) {
 				foreach($_POST["items"] as $val) {
-					echo "<p>".$val."</p>";
+					echo "<li>".$val."</li>";
 				}
 			}
 		}
 		?>
+		</ul>
+		<button>Back</button>
+		<button>Checkout</button>
 	</body>
 </html>
