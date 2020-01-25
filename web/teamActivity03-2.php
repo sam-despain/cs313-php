@@ -7,7 +7,7 @@
 		$comments = testInput($_POST["comments"]);
 		$continents = testInput($_POST["continents"]);
 		
-		function testInput ($data) {
+		function testInput($data) {
 			$data = trim($data);
 			$data = stripslashes($data);
 			$data = htmlspecialchars($data);

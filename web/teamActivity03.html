@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Team Activity 03</title>
+		<link rel="stylesheet" type="text/css" href="mainStyle.css"/>
 	</head>
 	<body>
 		<form action="teamActivity03-2.php" method="post">
@@ -11,10 +12,10 @@
 			</div>
 			<div>
 				<p>Major: 
-					<p><input type="radio" name="major" value="Computer Science">Computer Science</p>
-					<p><input type="radio" name="major" value="Web Design and Development">Web Design and Development</p>
-					<p><input type="radio" name="major" value="Computer Information Technology">Computer Information Technology</p>
-					<p><input type="radio" name="major" value="Computer Engineering">Computer Engineering</p>
+					<p><input class="radioCheck" type="radio" name="major" value="Computer Science">Computer Science</p>
+					<p><input class="radioCheck" type="radio" name="major" value="Web Design and Development">Web Design and Development</p>
+					<p><input class="radioCheck" type="radio" name="major" value="Computer Information Technology">Computer Information Technology</p>
+					<p><input class="radioCheck" type="radio" name="major" value="Computer Engineering">Computer Engineering</p>
 				</p>
 			</div>
 			<div>
@@ -22,18 +23,16 @@
 			</div>
 			<div>
 				<p>What continents have you ever visited?
-					<p><input type="checkbox" name="continents[]" value="North America">North America</p>
-					<p><input type="checkbox" name="continents[]" value="South America">South America</p>
-					<p><input type="checkbox" name="continents[]" value="Europe">Europe</p>
-					<p><input type="checkbox" name="continents[]" value="Asia">Asia</p>
-					<p><input type="checkbox" name="continents[]" value="Australia">Australia</p>
-					<p><input type="checkbox" name="continents[]" value="Africa">Africa</p>
-					<p><input type="checkbox" name="continents[]" value="Antarctica">Antarctica</p>
+					<p><input class="radioCheck" type="checkbox" name="continents[]" value="North America">North America</p>
+					<p><input class="radioCheck" type="checkbox" name="continents[]" value="South America">South America</p>
+					<p><input class="radioCheck" type="checkbox" name="continents[]" value="Europe">Europe</p>
+					<p><input class="radioCheck" type="checkbox" name="continents[]" value="Asia">Asia</p>
+					<p><input class="radioCheck" type="checkbox" name="continents[]" value="Australia">Australia</p>
+					<p><input class="radioCheck" type="checkbox" name="continents[]" value="Africa">Africa</p>
+					<p><input class="radioCheck" type="checkbox" name="continents[]" value="Antarctica">Antarctica</p>
 				</p>
 			</div>
-			<div>
-				<p><input type="submit" name="submit"></p>
-			</div>
+			<p><input class="submit" type="submit" name="submit"></p>
 		</form>
 	</body>
 </html>
