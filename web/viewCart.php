@@ -10,8 +10,8 @@
 		}
 		$cartItems = testInput($cartItems);
 		if (isset($_POST["submit"])) {
-			if (!empty($cartItems)) {
-				foreach($cartItems as $val) {
+			if (!empty($_POST["items"])) {
+				foreach($_POST["items"] as $val) {
 					echo "<p>".$val."</p>";
 				}
 			}
