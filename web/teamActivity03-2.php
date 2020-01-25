@@ -18,7 +18,7 @@
 		<p>Email: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
 		<p>Major: <?php echo $major; ?></p>
 		<p>Comments: <p><?php echo $comments; ?></p></p>
-		<p>You visited: <?php echo $continents; ?></p>
+		<p>You visited:</p>
 		<?php
 		if (isset($_POST["submit"])) {
 			if (!empty($_POST["continents"])) {
