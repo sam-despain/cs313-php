@@ -9,7 +9,7 @@ session_start();
 			<?php
 			$item=$_POST['item'];
 			while (list ($key1,$val1) = @each ($item)) {
-				echo "$key1 , $val1,<br>";
+				echo $key1.", ".$val1."<br>";
 				unset($_SESSION['cart'][$val1]);
 			}
 			function testInput($data) {
