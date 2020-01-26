@@ -5,7 +5,6 @@ session_start();
 <html>
 	<body>
 		<h1>Your Cart</h1>
-		<form action="" method="post">
 			<?php
 			$_SESSION["cart"]=array();
 			function testInput($data) {
@@ -19,15 +18,14 @@ session_start();
 				if (!empty($_POST["items"])) {
 					while (list ($key, $val) = each ($_POST["items"])) { 
 						array_push($_SESSION["cart"],$val);
-						echo "<p><input class=\"radioCheck\" type=\"checkbox\" value=\"".$key."\">".$val."</p>";
+						echo "<p>".$val."</p>";
 					}
 				}
 			}
 			print_r($_SESSION);
 			?>
-			<p><input class="submit" type="submit" name="submit" value="Remove"></p>
-		</form>
-		<a href=".">Back</a>
-		<a href="checkout.php">Checkout</a>
+		<a style="padding:10px" href="browseItems.php">Back</a>
+		<a style="padding:10px" href="removeItems.php">Remove</a>
+		<a style="padding:10px" href="checkout.php">Checkout</a>
 	</body>
 </html>
