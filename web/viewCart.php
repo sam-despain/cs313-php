@@ -5,6 +5,7 @@ session_start();
 <html>
 	<body>
 		<h1>Your Cart</h1>
+		<div>
 			<?php
 			$_SESSION["cart"]=array();
 			function testInput($data) {
@@ -24,6 +25,7 @@ session_start();
 			}
 			print_r($_SESSION);
 			?>
+		</div>
 		<a style="padding:10px" href="browseItems.php">Back</a>
 		<a style="padding:10px" href="removeItems.php">Remove</a>
 		<a style="padding:10px" href="checkout.php">Checkout</a>
