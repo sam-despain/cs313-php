@@ -17,7 +17,6 @@ session_start();
 			
 			if (isset($_POST["submit"])) {
 				if (!empty($_POST["items"])) {
-					//foreach($_POST["items"] as $val) {
 					while (list ($key, $val) = each ($_POST["items"])) { 
 						array_push($_SESSION["cart"],$val);
 						echo "<p><input class=\"radioCheck\" type=\"checkbox\" value=\"".$key."\">".$val."</p>";
@@ -28,7 +27,7 @@ session_start();
 			?>
 			<p><input class="submit" type="submit" name="submit" value="Remove"></p>
 		</form>
-		<a href="browseItems.php">Back</a>
+		<a href="..">Back</a>
 		<a href="checkout.php">Checkout</a>
 	</body>
 </html>
