@@ -27,7 +27,7 @@ session_start();
 			?>
 			<p><input class="submit" type="submit" name="submit" value="Remove"></p>
 		</form>
-		<a href="..">Back</a>
+		<a href=".">Back</a>
 		<a href="checkout.php">Checkout</a>
 	</body>
 </html>
