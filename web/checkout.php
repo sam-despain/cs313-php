@@ -1,5 +1,6 @@
 <?php
 include 'header.html';
+session_start();
 ?>
 <html>
 	<body>

@@ -1,5 +1,6 @@
 <?php
 include 'header.html';
+session_start();
 ?>
 <html>
 	<body>
@@ -15,6 +16,10 @@ include 'header.html';
 	$city = testInput($_POST["city"]);
 	$state = testInput($_POST["state"]);
 	$zip = testInput($_POST["zipCode"]);
+	
+	while (list ($key, $val) = each ($_SESSION["cart"])) { 
+		echo "$key -> $val <br>"; 
+	}
 	?>
 	<p>Ship to:<br/> 
 		<?php

@@ -1,12 +1,12 @@
 <?php
 include 'header.html';
+session_start();
 ?>
 <html>
 	<body>
 		<h1>Your Cart</h1>
 		<ul>
 		<?php
-		session_start();
 		$_SESSION["cart"]=array();
 		function testInput($data) {
 			$data = trim($data);
