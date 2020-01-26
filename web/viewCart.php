@@ -19,7 +19,7 @@ session_start();
 				if (!empty($_POST["items"])) {
 					foreach($_POST["items"] as $val) {
 						array_push($_SESSION["cart"],$val);
-						echo "<p><input class=\"radioCheck\" type=\"checkbox\" value=\"".$key."\">".$val."</p>";
+						echo "<p><input class=\"radioCheck\" type=\"checkbox\" value=\"".$_session["cart"].key."\">".$val."</p>";
 					}
 				}
 			}
