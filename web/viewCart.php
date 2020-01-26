@@ -15,7 +15,7 @@ session_start();
 				return $data;
 			}
 			
-			if (isset($_POST["remove"])) {
+			if (isset($_POST["submit"])) {
 				if (!empty($_POST["items"])) {
 					foreach($_POST["items"] as $val) {
 						array_push($_SESSION["cart"],$val);
@@ -25,7 +25,7 @@ session_start();
 			}
 			//echo sizeof($_SESSION["cart"]);
 			?>
-			<p><input class="submit" type="submit" name="remove" value="Remove"></p>
+			<p><input class="submit" type="submit" name="submit" value="Remove"></p>
 		</form>
 		<a href="browseItems.php">Back</a>
 		<a href="checkout.php">Checkout</a>
