@@ -9,7 +9,7 @@ session_start();
 			<?php
 			$item=$_POST['item'];
 			while (list ($key1,$val1) = @each ($item)) {
-				//echo "$key1 , $val1,<br>";
+				echo "$key1 , $val1,<br>";
 				unset($_SESSION['cart'][$val1]);
 			}
 			function testInput($data) {
@@ -19,13 +19,13 @@ session_start();
 				return $data;
 			}
 			while (list ($key, $val) = each ($_SESSION["cart"])) { 
-				echo "<input type=checkbox name=item[] value=\"".$key."\">".$key.": ".$val."<br>"; 
+				echo "<input type=\"checkbox\" name=\"item[]\" value=\"".$key."\">".$key.": ".$val."<br>"; 
 			}
 			print_r($_SESSION);
 			?>
 			<p><input class="submit" type="submit" name="submit" value="Remove"></p>
 		</form>
-		<a href="browseItems.php">Back</a>
-		<a href="checkout.php">Checkout</a>
+		<a style="padding:10px" href="browseItems.php">Back</a>
+		<a style="padding:10px" href="checkout.php">Checkout</a>
 	</body>
 </html>
