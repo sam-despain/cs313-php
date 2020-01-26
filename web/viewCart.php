@@ -5,7 +5,7 @@ session_start();
 <html>
 	<body>
 		<h1>Your Cart</h1>
-		<form>
+		<form action="viewCart.php" method="post">
 			<?php
 			$_SESSION["cart"]=array();
 			function testInput($data) {
