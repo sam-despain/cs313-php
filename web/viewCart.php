@@ -23,7 +23,7 @@ include 'header.html';
 				}
 			}
 		}
-		echo sizeof($_SESSION["cart");
+		echo sizeof($_SESSION["cart"]);
 		?>
 		</ul>
 		<a href="browseItems.php">Back</a>
