@@ -23,7 +23,7 @@ session_start();
 					}
 				}
 			}
-			print_r(array_keys($_SESSION["cart"]));
+			print_r($_SESSION);
 			?>
 			<p><input class="submit" type="submit" name="submit" value="Remove"></p>
 		</form>
