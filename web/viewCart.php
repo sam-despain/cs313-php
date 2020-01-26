@@ -15,7 +15,7 @@ session_start();
 				return $data;
 			}
 			
-			if (isset($_POST["submit"])) {
+			if (isset($_POST["remove"])) {
 				if (!empty($_POST["items"])) {
 					foreach($_POST["items"] as $val) {
 						array_push($_SESSION["cart"],$val);
