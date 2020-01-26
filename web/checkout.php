@@ -10,7 +10,7 @@ session_start();
 			<p>City:<input type="text" name="city"></p>
 			<p>State:<input type="text" name="state"></p>
 			<p>ZIP code:<input type="number" name="zipCode"></p>
-			<p><input class="submit" type="submit" name="submit"></p>
+			<p><input class="submit" type="submit" name="submit" value="Place order"></p>
 		</form>
 		<a href="viewCart.php">Back to cart</a>
 	</body>

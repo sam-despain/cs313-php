@@ -4,7 +4,7 @@ session_start();
 ?>
 <html>
 	<body>
-		<p>Items:<br/>
+		<p>Thank you for your purchase.<br/>
 		<?php
 		function testInput($data) {
 			$data = trim($data);
@@ -28,5 +28,6 @@ session_start();
 			echo $address."<br/>".$city.", ".$state." ".$zip;
 			?>
 		</p>
+		<a style="padding:10px" href="browseItems.php">Continue shopping</a>
 	</body>
 </html>
