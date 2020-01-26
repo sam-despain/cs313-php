@@ -20,6 +20,7 @@ include 'header.html';
 				}
 			}
 		}
+		echo $cartItems;
 		?>
 		</ul>
 		<a href="browseItems.php">Back</a>
