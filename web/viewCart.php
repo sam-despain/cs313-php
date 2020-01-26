@@ -5,7 +5,7 @@ session_start();
 <html>
 	<body>
 		<h1>Your Cart</h1>
-		<form action="removeItems.php" method="post">
+		<form action="" method="post">
 			<?php
 			$_SESSION["cart"]=array();
 			function testInput($data) {
@@ -18,7 +18,7 @@ session_start();
 			if (isset($_POST["submit"])) {
 				if (!empty($_POST["items"])) {
 					//foreach($_POST["items"] as $val) {
-					while (list ($key, $val) = each ($_SESSION["cart"])) { 
+					while (list ($key, $val) = each ($_POST["items"])) { 
 						array_push($_SESSION["cart"],$val);
 						echo "<p><input class=\"radioCheck\" type=\"checkbox\" value=\"".$key."\">".$val."</p>";
 					}
