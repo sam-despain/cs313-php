@@ -7,6 +7,11 @@ session_start();
 		<h1>Your Cart</h1>
 		<form action="viewCart.php" method="post">
 			<?php
+			$item=$_POST['item'];
+			while (list ($key1,$val1) = @each ($item)) {
+				//echo "$key1 , $val1,<br>";
+				unset($_SESSION['cart'][$val1]);
+			}
 			function testInput($data) {
 				$data = trim($data);
 				$data = stripslashes($data);
@@ -14,7 +19,7 @@ session_start();
 				return $data;
 			}
 			while (list ($key, $val) = each ($_SESSION["cart"])) { 
-				echo $key.": ".$val."<br/>"; 
+				echo "<input type=checkbox name=item[] value=\"".$key."\">".$key.": ".$val."<br>"; 
 			}
 			print_r($_SESSION);
 			?>
