@@ -10,6 +10,7 @@ CREATE TABLE furniture (
 	finishID int,
 	doors int,
 	drawers int,
+	PRIMARY KEY (SKU),
 	FOREIGN KEY (collectionID) REFERENCES collection(ID),
 	FOREIGN KEY (typeID) REFERENCES type(ID),
 	FOREIGN KEY (finishID) REFERENCES finish(ID)
