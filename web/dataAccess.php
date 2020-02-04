@@ -2,9 +2,9 @@
 include 'header.html';
 try
 {
-  $user = 'postgres';
-  $password = 'password';
-  $db = new PDO('pgsql:host=localhost;dbname=myTestDB', $user, $password);
+  $user = 'postgresql-octagonal-32045';
+  $password = 'Cori4ntumr';
+  $db = new PDO('pgsql:host=localhost;dbname=database', $user, $password);
 
   // this line makes PDO give us an exception when there are problems,
   // and can be very helpful in debugging! (But you would likely want
