@@ -21,10 +21,10 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-foreach ($db->query('SELECT username, password FROM note_user') as $row)
+foreach ($db->query('SELECT * FROM collection;') as $row)
 {
-  echo 'user: ' . $row['username'];
-  echo ' password: ' . $row['password'];
+  echo 'ID: ' . $row['id'];
+  echo ' Name: ' . $row['name'];
   echo '<br/>';
 }
 ?>
