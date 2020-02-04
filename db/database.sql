@@ -14,7 +14,8 @@ CREATE TABLE furniture (
 	PRIMARY KEY (SKU),
 	FOREIGN KEY (collectionID) REFERENCES collection(ID),
 	FOREIGN KEY (typeID) REFERENCES type(ID),
-	FOREIGN KEY (finishID) REFERENCES finish(ID)
+	FOREIGN KEY (finishID) REFERENCES finish(ID),
+	FOREIGN KEY (imageID) REFERENCES images(ID)
 );
 
 CREATE TABLE collection (
@@ -35,3 +36,8 @@ CREATE TABLE finish (
 	PRIMARY KEY (ID)
 );
 
+CREATE TABLE images (
+	ID SERIAL UNIQUE,
+	link varchar(255),
+	PRIMARY KEY (ID)
+);

@@ -51,5 +51,13 @@ catch (PDOException $ex)
 			}
 			?>
 		</select>
+		<p>
+			<?php
+			foreach ($db->query('SELECT * FROM images;') as $row)
+			{
+				echo '<img src=' . $row['name'] . '/>';
+			}
+			?>
+		</p>
 	</body>
 </html>
