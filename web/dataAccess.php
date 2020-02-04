@@ -2,13 +2,18 @@
 include 'header.html';
 try
 {
-  $user = 'postgresql-octagonal-32045';
-  $password = 'Cori4ntumr';
-  $db = new PDO('pgsql:host=localhost;dbname=database', $user, $password);
+  $dbUrl = getenv('DATABASE_URL');
 
-  // this line makes PDO give us an exception when there are problems,
-  // and can be very helpful in debugging! (But you would likely want
-  // to disable it for production environments.)
+  $dbOpts = parse_url($dbUrl);
+
+  $dbHost = $dbOpts["host"];
+  $dbPort = $dbOpts["port"];
+  $dbUser = $dbOpts["user"];
+  $dbPassword = $dbOpts["pass"];
+  $dbName = ltrim($dbOpts["path"],'/');
+
+  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $ex)
