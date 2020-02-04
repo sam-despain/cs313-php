@@ -1,7 +1,7 @@
 CREATE DATABASE furnitureZone;
 
 CREATE TABLE furniture (
-	SKU varchar(255),
+	SKU varchar(255) NOT NULL,
 	collectionID int,
 	typeID int,
 	width float,
@@ -10,6 +10,7 @@ CREATE TABLE furniture (
 	finishID int,
 	doors int,
 	drawers int,
+	imageID int,
 	PRIMARY KEY (SKU),
 	FOREIGN KEY (collectionID) REFERENCES collection(ID),
 	FOREIGN KEY (typeID) REFERENCES type(ID),
@@ -17,19 +18,20 @@ CREATE TABLE furniture (
 );
 
 CREATE TABLE collection (
-	ID int,
+	ID SERIAL UNIQUE,
 	name varchar(255),
 	PRIMARY KEY (ID)
 );
 
 CREATE TABLE type (
-	ID int,
+	ID SERIAL UNIQUE,
 	name varchar(255),
 	PRIMARY KEY (ID)
 );
 
 CREATE TABLE finish (
-	ID int,
+	ID SERIAL UNIQUE,
 	name varchar(255),
 	PRIMARY KEY (ID)
 );
+
