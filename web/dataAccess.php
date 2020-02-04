@@ -21,7 +21,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-foreach ($db->query('SELECT * FROM type;') as $row)
+foreach ($db->query('SELECT * FROM finish;') as $row)
 {
   echo 'ID: ' . $row['id'];
   echo ' Name: ' . $row['name'];
