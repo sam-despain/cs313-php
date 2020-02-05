@@ -52,7 +52,7 @@ catch (PDOException $ex)
 			?>
 		</select>
 		<?php
-		foreach ($db->query('SELECT furniture.*, images.link, type.name FROM images INNER JOIN furniture ON images.id=furniture.imageid INNER JOIN type ON type.id=furniture.typeid;') as $row)
+		foreach ($db->query('SELECT furniture.*, images.link, type.name, collection.name, finish.name FROM images INNER JOIN furniture ON images.id=furniture.imageid INNER JOIN type ON type.id=furniture.typeid INNER JOIN collection ON collection.id = furniture.collectionid INNER JOIN finish ON finish.id = furniture.finishid;') as $row)
 		{
 			echo '<div>';
 			echo '<h3>' . $row['name'] . '</h3>';
