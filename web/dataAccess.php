@@ -45,7 +45,7 @@ catch (PDOException $ex)
 		<select>
 			<option>-Furniture type-</option>
 			<?php
-			foreach ($db->query('SELECT * FROM type;') as $row)
+			foreach ($db->query('SELECT * FROM type ORDER BY type;') as $row)
 			{
 				echo '<option>' . $row['name'] . '</option>';
 			}
@@ -53,7 +53,7 @@ catch (PDOException $ex)
 		</select>
 		<p>
 			<?php
-			foreach ($db->query('SELECT * FROM images;') as $row)
+			foreach ($db->query('SELECT images.link FROM images INNER JOIN furniture ON images.id=furniture.imageid;') as $row)
 			{
 				echo '<img src="' . $row['link'] . '">';
 			}
