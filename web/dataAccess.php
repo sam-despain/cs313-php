@@ -24,27 +24,27 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<div>
+		<form action="dataDisplay.php" method="post">
 			<select>
-				<option>-Collection-</option>
+				<option name="collection">-Collection-</option>
 				<?php
-				foreach ($db->query('SELECT * FROM collection;') as $row)
+				foreach ($db->query('SELECT * FROM collection ORDER BY collection;') as $row)
 				{
 					echo '<option>' . $row['name'] . '</option>';
 				}
 				?>
 			</select>
 			<select>
-				<option>-Finish-</option>
+				<option name="finish">-Finish-</option>
 				<?php
-				foreach ($db->query('SELECT * FROM finish;') as $row)
+				foreach ($db->query('SELECT * FROM finish ORDER BY finish;') as $row)
 				{
 					echo '<option>' . $row['name'] . '</option>';
 				}
 				?>
 			</select>
 			<select>
-				<option>-Furniture type-</option>
+				<option name="type">-Furniture type-</option>
 				<?php
 				foreach ($db->query('SELECT * FROM type ORDER BY type;') as $row)
 				{
@@ -52,18 +52,7 @@ catch (PDOException $ex)
 				}
 				?>
 			</select>
-		</div>
-		<?php
-		foreach ($db->query('SELECT furniture.width, furniture.height, furniture.depth, images.link, type.name t, collection.name c, finish.name f FROM images INNER JOIN furniture ON images.id=furniture.imageid INNER JOIN type ON type.id=furniture.typeid INNER JOIN collection ON collection.id = furniture.collectionid INNER JOIN finish ON finish.id = furniture.finishid;') as $row)
-		{
-			echo '<div>';
-			echo '<h3>' . $row['t'] . '</h3>';
-			echo '<img src="' . $row['link'] . '">';
-			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
-			echo '<p>Collection: ' . $row['c'] . '</p>';
-			echo '<p>Finish: ' . $row['f'] . '</p>';
-			echo '</div>';
-		}
-		?>
+			<input type="submit" value="Submit">
+		</form>
 	</body>
 </html>
