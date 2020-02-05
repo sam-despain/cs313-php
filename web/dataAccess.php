@@ -24,33 +24,35 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<select>
-			<option>-Collection-</option>
-			<?php
-			foreach ($db->query('SELECT * FROM collection;') as $row)
-			{
-				echo '<option>' . $row['name'] . '</option>';
-			}
-			?>
-		</select>
-		<select>
-			<option>-Finish-</option>
-			<?php
-			foreach ($db->query('SELECT * FROM finish;') as $row)
-			{
-				echo '<option>' . $row['name'] . '</option>';
-			}
-			?>
-		</select>
-		<select>
-			<option>-Furniture type-</option>
-			<?php
-			foreach ($db->query('SELECT * FROM type ORDER BY type;') as $row)
-			{
-				echo '<option>' . $row['name'] . '</option>';
-			}
-			?>
-		</select>
+		<div>
+			<select>
+				<option>-Collection-</option>
+				<?php
+				foreach ($db->query('SELECT * FROM collection;') as $row)
+				{
+					echo '<option>' . $row['name'] . '</option>';
+				}
+				?>
+			</select>
+			<select>
+				<option>-Finish-</option>
+				<?php
+				foreach ($db->query('SELECT * FROM finish;') as $row)
+				{
+					echo '<option>' . $row['name'] . '</option>';
+				}
+				?>
+			</select>
+			<select>
+				<option>-Furniture type-</option>
+				<?php
+				foreach ($db->query('SELECT * FROM type ORDER BY type;') as $row)
+				{
+					echo '<option>' . $row['name'] . '</option>';
+				}
+				?>
+			</select>
+		</div>
 		<?php
 		foreach ($db->query('SELECT furniture.width, furniture.height, furniture.depth, images.link, type.name t, collection.name c, finish.name f FROM images INNER JOIN furniture ON images.id=furniture.imageid INNER JOIN type ON type.id=furniture.typeid INNER JOIN collection ON collection.id = furniture.collectionid INNER JOIN finish ON finish.id = furniture.finishid;') as $row)
 		{
