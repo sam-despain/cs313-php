@@ -51,13 +51,13 @@ catch (PDOException $ex)
 			}
 			?>
 		</select>
-		<p>
-			<?php
-			foreach ($db->query('SELECT images.link FROM images INNER JOIN furniture ON images.id=furniture.imageid;') as $row)
-			{
-				echo '<img src="' . $row['link'] . '">';
-			}
-			?>
-		</p>
+		<?php
+		foreach ($db->query('SELECT furniture.*, images.link FROM images INNER JOIN furniture ON images.id=furniture.imageid;') as $row)
+		{
+			echo '<div>';
+			echo '<img src="' . $row['link'] . '">';
+			echo '<div>';
+		}
+		?>
 	</body>
 </html>
