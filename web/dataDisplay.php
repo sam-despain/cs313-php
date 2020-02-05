@@ -25,7 +25,8 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		foreach ($db->query('SELECT furniture.sku, furniture.width, furniture.height, furniture.depth, images.link, type.name t, collection.name c, finish.name f FROM images INNER JOIN furniture ON images.id=furniture.imageid INNER JOIN type ON type.id=furniture.typeid INNER JOIN collection ON collection.id = furniture.collectionid INNER JOIN finish ON finish.id = furniture.finishid ORDER BY sku;') as $row)
+		$myQuery = 'SELECT furniture.sku, furniture.width, furniture.height, furniture.depth, images.link, type.name t, collection.name c, finish.name f FROM images INNER JOIN furniture ON images.id=furniture.imageid INNER JOIN type ON type.id=furniture.typeid INNER JOIN collection ON collection.id = furniture.collectionid INNER JOIN finish ON finish.id = furniture.finishid ORDER BY sku;';
+		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
 			echo '<h3>' . $row['t'] . '</h3>';
