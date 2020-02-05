@@ -37,5 +37,6 @@ catch (PDOException $ex)
 			echo '</div>';
 		}
 		?>
+		<div><a href="dataAccess.php">Back</a></div>
 	</body>
 </html>
