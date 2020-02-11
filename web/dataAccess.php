@@ -55,11 +55,18 @@ catch (PDOException $ex)
 			<input type="submit" value="Submit">
 		</form>
 		<?php
-		$myQuery = 'SELECT fr.sku, fr.width, fr.height, fr.depth, i.link, t.name, c.name, fi.name FROM images AS i
-			JOIN furniture AS fr ON i.id=fr.imageid
-			JOIN type AS t ON t.id=fr.typeid
-			JOIN collection AS c ON c.id = fr.collectionid
-			JOIN finish AS fi ON fi.id = fr.finishid';
+		$myQuery = 'SELECT furniture.sku,
+			furniture.width,
+			furniture.height,
+			furniture.depth,
+			images.link,
+			type.name,
+			collection.name,
+			finish.name FROM images
+			JOIN furniture ON images.id = furniture.imageid
+			JOIN type ON type.id = furniture.typeid
+			JOIN collection ON collection.id = furniture.collectionid
+			JOIN finish ON finish.id = furniture.finishid';
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
