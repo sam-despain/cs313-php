@@ -29,7 +29,7 @@ catch (PDOException $ex)
 				<?php
 				foreach ($db->query('SELECT * FROM type ORDER BY type;') as $row)
 				{
-					echo '<input name="type" type="checkbox>"' . $row['name'] . '</input>';
+					echo '<input name="type" type="checkbox">' . $row['name'] . '</input>';
 				}
 				?>
 			</div>
@@ -37,7 +37,7 @@ catch (PDOException $ex)
 				<?php
 				foreach ($db->query('SELECT * FROM finish ORDER BY finish;') as $row)
 				{
-					echo '<input name="finish" type="checkbox>' . $row['name'] . '</input>';
+					echo '<input name="finish" type="checkbox">' . $row['name'] . '</input>';
 				}
 				?>
 			</div>
@@ -45,7 +45,7 @@ catch (PDOException $ex)
 				<?php
 				foreach ($db->query('SELECT * FROM collection ORDER BY collection;') as $row)
 				{
-					echo '<input name="collection" type="checkbox>' . $row['name'] . '</input>';
+					echo '<input name="collection" type="checkbox">' . $row['name'] . '</input>';
 				}
 				?>
 			</div>
