@@ -25,12 +25,17 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		$myQuery = 'SELECT fr.sku, fr.width, fr.height, fr.depth, i.link, t.name, c.name, fi.name FROM images i
+		if (!$_POST["type"] && !$_POST["finish"] && !$_POST["collection"]) {
+			$myQuery = 'SELECT * FROM furniture';
+		} else {
+			$myQuery = 'SELECT fr.sku, fr.width, fr.height, fr.depth, i.link, t.name, c.name, fi.name FROM images i
 			JOIN furniture fr ON i.id=fr.imageid
 			JOIN type t ON t.id=fr.typeid
 			JOIN collection c ON c.id = fr.collectionid
 			JOIN finish fi ON fi.id = fr.finishid
 			WHERE (c.name = \'' . $_POST["collection"] . '\' OR fi.name = \'' . $_POST["finish"] . '\') OR t.name = \'' . $_POST["type"] . '\'';
+		}
+		
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
