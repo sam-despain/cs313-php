@@ -72,22 +72,6 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p><input type="file" name="imageInput"></p>
-			<p><input type="text" name="skuInput" placeholder="SKU #"></p>
-			<p><input type="number" name="widthInput" placeholder="Width">
-			<input type="number" name="heightInput" placeholder="Height">
-			<input type="number" name="depthInput" placeholder="Depth"></p>
-			<p>
-				<select name="collectionInput">
-					<option>-Collection-</option>
-					<?php
-					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
 			<p>
 				<select name="finishInput">
 					<option>-Finish-</option>
@@ -99,6 +83,22 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
+			<p>
+				<select name="collectionInput">
+					<option>-Collection-</option>
+					<?php
+					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
+					{
+						echo '<option>' . $row['name'] . '</option>';
+					}
+					?>
+				</select>
+			</p>	
+			<p><input type="file" name="imageInput"></p>
+			<p><input type="text" name="skuInput" placeholder="SKU #"></p>
+			<p><input type="number" name="widthInput" placeholder="Width">
+			<input type="number" name="heightInput" placeholder="Height">
+			<input type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Create furniture"></p>
 		</form>
 		<?php
