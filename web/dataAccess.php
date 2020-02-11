@@ -25,33 +25,33 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<form action="dataDisplay.php" method="post">
-			<div>
-				<h3>Furniture type</h3>
+			<select name="type">
+				<option>-Furniture type-</option>
 				<?php
 				foreach ($db->query('SELECT * FROM type ORDER BY type;') as $row)
 				{
-				echo '<p><input name="type" type="checkbox" value="' . $row['name'] . '">' . $row['name'] . '</p>';
+					echo '<option>' . $row['name'] . '</option>';
 				}
 				?>
-			</div>
-			<div>
-				<h3>Finish</h3>
+			</select>
+			<select name="finish">
+				<option>-Finish-</option>
 				<?php
 				foreach ($db->query('SELECT * FROM finish ORDER BY finish;') as $row)
 				{
-					echo '<p><input name="finish" type="checkbox">' . $row['name'] . '</p>';
+					echo '<option>' . $row['name'] . '</option>';
 				}
 				?>
-			</div>
-			<div>
-				<h3>Collection</h3>
+			</select>
+			<select name="collection">
+				<option>-Collection-</option>
 				<?php
 				foreach ($db->query('SELECT * FROM collection ORDER BY collection;') as $row)
 				{
-					echo '<p><input name="collection" type="checkbox">' . $row['name'] . '</p>';
+					echo '<option>' . $row['name'] . '</option>';
 				}
 				?>
-			</div>
+			</select>
 			<input type="submit" value="Submit">
 		</form>
 	</body>
