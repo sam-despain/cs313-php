@@ -26,7 +26,11 @@ catch (PDOException $ex)
 	<body>
 		<?php
 		if ($_POST["type"] == '-Furniture type-' && $_POST["finish"] == '-Finish-' && $_POST["collection"] == '-Collection-') {
-			$myQuery = 'SELECT fr.sku, fr.width, fr.height, fr.depth, i.link, t.name, c.name, fi.name FROM images i';
+			$myQuery = 'SELECT fr.sku, fr.width, fr.height, fr.depth, i.link, t.name, c.name, fi.name FROM images i
+			JOIN furniture fr ON i.id=fr.imageid
+			JOIN type t ON t.id=fr.typeid
+			JOIN collection c ON c.id = fr.collectionid
+			JOIN finish fi ON fi.id = fr.finishid';
 		} else {
 			$myQuery = 'SELECT fr.sku, fr.width, fr.height, fr.depth, i.link, t.name, c.name, fi.name FROM images i
 			JOIN furniture fr ON i.id=fr.imageid
