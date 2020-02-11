@@ -67,6 +67,26 @@ catch (PDOException $ex)
 			<input type="file" name="imageInput">
 			<input type="text" name="skuInput" placeholder="SKU #">
 			<input type="number" name="widthInput" placeholder="Width">
+			<input type="number" name="heightInput" placeholder="Height">
+			<input type="number" name="depthInput" placeholder="Depth">
+			<select name="collectionInput">
+				<option>-Collection-</option>
+				<?php
+				foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
+				{
+					echo '<option>' . $row['name'] . '</option>';
+				}
+				?>
+			</select>
+			<select name="finishInput">
+				<option>-Finish-</option>
+				<?php
+				foreach ($db->query('SELECT * FROM finisj ORDER BY finish.name;') as $row)
+				{
+					echo '<option>' . $row['name'] . '</option>';
+				}
+				?>
+			</select>
 			<input type="submit" value="Create furniture">
 		</form>
 		<?php
