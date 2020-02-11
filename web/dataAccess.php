@@ -60,9 +60,9 @@ catch (PDOException $ex)
 			fr.height,
 			fr.depth,
 			i.link,
-			t.name,
-			c.name,
-			fi.name FROM images i
+			t.name typeName,
+			c.name collectionName,
+			fi.name finishName FROM images i
 			JOIN furniture fr ON i.id = fr.imageid
 			JOIN type t ON t.id = fr.typeid
 			JOIN collection c ON c.id = fr.collectionid
@@ -70,11 +70,12 @@ catch (PDOException $ex)
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
-			echo '<h3>' . $row['t.name'] . '</h3>';
+			echo '<h3>' . $row['typeName'] . '</h3>';
 			echo '<img src="' . $row['link'] . '">';
+			echo '<p>SKU: ' . $row['sku'] . '</p>';
 			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
-			echo '<p>Collection: ' . $row['collection'] . '</p>';
-			echo '<p>Finish: ' . $row['finish'] . '</p>';
+			echo '<p>Collection: ' . $row['collectionName'] . '</p>';
+			echo '<p>Finish: ' . $row['finishName'] . '</p>';
 			echo '</div>';
 		}
 		?>
