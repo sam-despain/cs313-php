@@ -54,6 +54,19 @@ catch (PDOException $ex)
 			</select>
 			<input type="submit" value="Select">
 		</form>
+		<form>
+			<select name="type">
+				<option>-Furniture type-</option>
+				<?php
+				foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
+				{
+					echo '<option>' . $row['name'] . '</option>';
+				}
+				?>
+			</select>
+			<input type="file" id="image" name="imagename" value="Select Image">
+			<input type="submit" value="Create furniture">
+		</form>
 		<?php
 		$myQuery = 'SELECT fr.sku,
 			fr.width,
@@ -80,17 +93,5 @@ catch (PDOException $ex)
 			echo '</div>';
 		}
 		?>
-		<form>
-			<select name="type">
-				<option>-Furniture type-</option>
-				<?php
-				foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
-				{
-					echo '<option>' . $row['name'] . '</option>';
-				}
-				?>
-			</select>
-			<input type="submit" value="Create furniture">
-		</form>
 	</body>
 </html>
