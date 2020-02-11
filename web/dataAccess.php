@@ -28,7 +28,7 @@ catch (PDOException $ex)
 			<select name="type">
 				<option>-Furniture type-</option>
 				<?php
-				foreach ($db->query('SELECT * FROM type ORDER BY type;') as $row)
+				foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
 				{
 					echo '<option>' . $row['name'] . '</option>';
 				}
@@ -37,7 +37,7 @@ catch (PDOException $ex)
 			<select name="finish">
 				<option>-Finish-</option>
 				<?php
-				foreach ($db->query('SELECT * FROM finish ORDER BY finish;') as $row)
+				foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
 				{
 					echo '<option>' . $row['name'] . '</option>';
 				}
@@ -46,13 +46,13 @@ catch (PDOException $ex)
 			<select name="collection">
 				<option>-Collection-</option>
 				<?php
-				foreach ($db->query('SELECT * FROM collection ORDER BY collection;') as $row)
+				foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
 				{
 					echo '<option>' . $row['name'] . '</option>';
 				}
 				?>
 			</select>
-			<input type="submit" value="Submit">
+			<input type="submit" value="Select">
 		</form>
 		<?php
 		$myQuery = 'SELECT fr.sku,
@@ -66,7 +66,8 @@ catch (PDOException $ex)
 			JOIN furniture fr ON i.id = fr.imageid
 			JOIN type t ON t.id = fr.typeid
 			JOIN collection c ON c.id = fr.collectionid
-			JOIN finish fi ON fi.id = fr.finishid;';
+			JOIN finish fi ON fi.id = fr.finishid
+			ORDER BY type.name;';
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
@@ -79,6 +80,17 @@ catch (PDOException $ex)
 			echo '</div>';
 		}
 		?>
-		
+		<form>
+			<select name="type">
+				<option>-Furniture type-</option>
+				<?php
+				foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
+				{
+					echo '<option>' . $row['name'] . '</option>';
+				}
+				?>
+			</select>
+			<input type="submit" value="Create furniture">
+		</form>
 	</body>
 </html>
