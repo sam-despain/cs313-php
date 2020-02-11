@@ -1,43 +1,34 @@
 CREATE DATABASE furnitureZone;
 
 CREATE TABLE furniture (
-	SKU varchar(255) NOT NULL,
-	collectionID int,
-	typeID int,
+	SKU varchar(255) PRIMARY KEY,
+	collectionID int REFERENCES collection(ID),
+	typeID int REFERENCES type(ID),
 	width float,
 	height float,
 	depth float,
-	finishID int,
+	finishID int REFERENCES finish(ID),
 	doors int,
 	drawers int,
-	imageID int,
-	PRIMARY KEY (SKU),
-	FOREIGN KEY (collectionID) REFERENCES collection(ID),
-	FOREIGN KEY (typeID) REFERENCES type(ID),
-	FOREIGN KEY (finishID) REFERENCES finish(ID),
-	FOREIGN KEY (imageID) REFERENCES images(ID)
+	imageID int REFERENCES images(ID)
 );
 
 CREATE TABLE collection (
-	ID SERIAL UNIQUE,
+	ID SERIAL PRIMARY KEY,
 	name varchar(255),
-	PRIMARY KEY (ID)
 );
 
 CREATE TABLE type (
-	ID SERIAL UNIQUE,
+	ID SERIAL PRIMARY KEY,
 	name varchar(255),
-	PRIMARY KEY (ID)
 );
 
 CREATE TABLE finish (
-	ID SERIAL UNIQUE,
+	ID SERIAL PRIMARY KEY,
 	name varchar(255),
-	PRIMARY KEY (ID)
 );
 
 CREATE TABLE images (
-	ID SERIAL UNIQUE,
+	ID SERIAL PRIMARY KEY,
 	link varchar(255),
-	PRIMARY KEY (ID)
 );

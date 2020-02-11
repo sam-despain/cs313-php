@@ -25,7 +25,7 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		$myQuery = 'SELECT furniture.sku, furniture.width, furniture.height, furniture.depth, images.link, type.name t, collection.name c, finish.name f FROM images INNER JOIN furniture ON images.id=furniture.imageid INNER JOIN type ON type.id=furniture.typeid INNER JOIN collection ON collection.id = furniture.collectionid INNER JOIN finish ON finish.id = furniture.finishid WHERE (collection.name = \'' . $_POST["collection"] . '\' OR finish.name = \'' . $_POST["finish"] . '\') OR type.name = \'' . $_POST["type"] . '\'';
+		$myQuery = 'SELECT fr.sku, fr.width, fr.height, fr.depth, i.link, t.name, c.name, fi.name FROM images i JOIN furniture fr ON i.id=fr.imageid JOIN type t ON t.id=fr.typeid JOIN collection c ON c.id = fr.collectionid JOIN finish fi ON fi.id = fr.finishid WHERE (c.name = \'' . $_POST["collection"] . '\' OR fi.name = \'' . $_POST["finish"] . '\') OR t.name = \'' . $_POST["type"] . '\'';
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
