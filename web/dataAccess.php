@@ -76,7 +76,7 @@ catch (PDOException $ex)
 				<select name="finishInput">
 					<option>-Finish-</option>
 					<?php
-					foreach ($db->query('SELECT * FROM finisj ORDER BY finish.name;') as $row)
+					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
 					{
 						echo '<option>' . $row['name'] . '</option>';
 					}
