@@ -30,7 +30,7 @@ catch (PDOException $ex)
 				<?php
 				foreach ($db->query('SELECT * FROM type ORDER BY type;') as $row)
 				{
-					echo '<p><input name="type" type="checkbox">' . $row['name'] . '</p>';
+				echo '<p><input name="type" type="checkbox" value="' . $row['name'] . '">' . $row['name'] . '</p>';
 				}
 				?>
 			</div>
