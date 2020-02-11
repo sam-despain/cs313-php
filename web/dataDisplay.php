@@ -25,21 +25,28 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		$myQuery = 'SELECT fr.sku, fr.width, fr.height, fr.depth, i.link, t.name, c.name, fi.name FROM images i
-			JOIN furniture fr ON i.id=fr.imageid
-			JOIN type t ON t.id=fr.typeid
-			JOIN collection c ON c.id = fr.collectionid
-			JOIN finish fi ON fi.id = fr.finishid
-			WHERE (c.name = \'' . $_POST["collection"] . '\' OR fi.name = \'' . $_POST["finish"] . '\') OR t.name = \'' . $_POST["type"] . '\'';
+		$myQuery = 'SELECT furniture.sku,
+			furniture.width,
+			furniture.height,
+			furniture.depth,
+			images.link,
+			type.name,
+			collection.name,
+			finish.name FROM images
+			JOIN furniture ON images.id = furniture.imageid
+			JOIN type ON type.id = furniture.typeid
+			JOIN collection ON collection.id = furniture.collectionid
+			JOIN finish ON finish.id = furniture.finishid
+			WHERE (collection.name = \'' . $_POST["collection"] . '\' OR finish.name = \'' . $_POST["finish"] . '\') OR type.name = \'' . $_POST["type"] . '\';';
 		
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
-			echo '<h3>' . $row['t'] . '</h3>';
+			echo '<h3>' . $row['type'] . '</h3>';
 			echo '<img src="' . $row['link'] . '">';
 			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
-			echo '<p>Collection: ' . $row['c'] . '</p>';
-			echo '<p>Finish: ' . $row['f'] . '</p>';
+			echo '<p>Collection: ' . $row['collection'] . '</p>';
+			echo '<p>Finish: ' . $row['finish'] . '</p>';
 			echo '</div>';
 		}
 		?>

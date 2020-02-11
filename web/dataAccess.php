@@ -66,7 +66,7 @@ catch (PDOException $ex)
 			JOIN furniture ON images.id = furniture.imageid
 			JOIN type ON type.id = furniture.typeid
 			JOIN collection ON collection.id = furniture.collectionid
-			JOIN finish ON finish.id = furniture.finishid';
+			JOIN finish ON finish.id = furniture.finishid;';
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
