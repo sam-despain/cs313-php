@@ -25,7 +25,7 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		if (!$_POST["type"] && !$_POST["finish"] && !$_POST["collection"]) {
+		if ($_POST["type"] == '-Furniture type-' && $_POST["finish"] == '-Finish-' && $_POST["collection"] == '-Collection-') {
 			$myQuery = 'SELECT * FROM furniture';
 		} else {
 			$myQuery = 'SELECT fr.sku, fr.width, fr.height, fr.depth, i.link, t.name, c.name, fi.name FROM images i
