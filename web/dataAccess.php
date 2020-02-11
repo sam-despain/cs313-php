@@ -67,7 +67,7 @@ catch (PDOException $ex)
 			JOIN type t ON t.id = fr.typeid
 			JOIN collection c ON c.id = fr.collectionid
 			JOIN finish fi ON fi.id = fr.finishid
-			ORDER BY type.name;';
+			ORDER BY t.name;';
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
