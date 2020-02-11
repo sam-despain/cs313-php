@@ -66,10 +66,11 @@ catch (PDOException $ex)
 			echo '<h3>' . $row['t'] . '</h3>';
 			echo '<img src="' . $row['link'] . '">';
 			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
-			echo '<p>Collection: ' . $row['c'] . '</p>';
-			echo '<p>Finish: ' . $row['f'] . '</p>';
+			echo '<p>Collection: ' . $row['collection'] . '</p>';
+			echo '<p>Finish: ' . $row['finish'] . '</p>';
 			echo '</div>';
 		}
 		?>
+		
 	</body>
 </html>
