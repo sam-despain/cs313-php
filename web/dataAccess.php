@@ -63,11 +63,11 @@ catch (PDOException $ex)
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
-			echo '<h3>' . $row['t'] . '</h3>';
-			echo '<img src="' . $row['i.link'] . '">';
-			echo '<p>Dimensions: ' . $row['fr.width'] . ' x ' . $row['fr.height'] . ' x ' . $row['fr.depth'] . '</p>';
-			echo '<p>Collection: ' . $row['c.name'] . '</p>';
-			echo '<p>Finish: ' . $row['fi.name'] . '</p>';
+			echo '<h3>' . $row['type'] . '</h3>';
+			echo '<img src="' . $row['link'] . '">';
+			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
+			echo '<p>Collection: ' . $row['collection'] . '</p>';
+			echo '<p>Finish: ' . $row['finish'] . '</p>';
 			echo '</div>';
 		}
 		?>
