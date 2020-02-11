@@ -70,7 +70,7 @@ catch (PDOException $ex)
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div>';
-			echo '<h3>' . $row['type'] . '</h3>';
+			echo '<h3>' . $row['t.name'] . '</h3>';
 			echo '<img src="' . $row['link'] . '">';
 			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
 			echo '<p>Collection: ' . $row['collection'] . '</p>';
