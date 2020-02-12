@@ -25,6 +25,7 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<form>
+			<h2>Create New Furniture</h2>
 			<p>
 				<select name="typeInput">
 					<option>-Furniture type-</option>
@@ -63,9 +64,10 @@ catch (PDOException $ex)
 			<p><input type="number" name="widthInput" placeholder="Width">
 			<input type="number" name="heightInput" placeholder="Height">
 			<input type="number" name="depthInput" placeholder="Depth"></p>
-			<p><input type="submit" value="Create furniture"></p>
+			<p><input type="submit" value="Create"></p>
 		</form>
 		<form action="dataDisplay.php" method="post">
+			<h2>Search for furniture</h2>
 			<p>
 				<select name="type">
 					<option>-Furniture type-</option>
@@ -99,7 +101,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p><input type="submit" value="Select"></p>
+			<p><input type="submit" value="Search"></p>
 		</form>
 		<?php
 		$myQuery = 'SELECT fr.sku,

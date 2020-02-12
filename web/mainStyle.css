@@ -1,6 +1,9 @@
 body {
 	font-family: helvetica;
 }
+h3 {
+	align: center;
+}
 form {
 	margin: 10px;
 	background-color: #ccc;
