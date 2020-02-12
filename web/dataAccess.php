@@ -24,42 +24,6 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<form action="dataDisplay.php" method="post">
-			<p>
-				<select name="type">
-					<option>-Furniture type-</option>
-					<?php
-					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>
-				<select name="finish">
-					<option>-Finish-</option>
-					<?php
-					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>
-				<select name="collection">
-					<option>-Collection-</option>
-					<?php
-					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p><input type="submit" value="Select"></p>
-		</form>
 		<form>
 			<p>
 				<select name="typeInput">
@@ -100,6 +64,42 @@ catch (PDOException $ex)
 			<input type="number" name="heightInput" placeholder="Height">
 			<input type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Create furniture"></p>
+		</form>
+		<form action="dataDisplay.php" method="post">
+			<p>
+				<select name="type">
+					<option>-Furniture type-</option>
+					<?php
+					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
+					{
+						echo '<option>' . $row['name'] . '</option>';
+					}
+					?>
+				</select>
+			</p>
+			<p>
+				<select name="finish">
+					<option>-Finish-</option>
+					<?php
+					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
+					{
+						echo '<option>' . $row['name'] . '</option>';
+					}
+					?>
+				</select>
+			</p>
+			<p>
+				<select name="collection">
+					<option>-Collection-</option>
+					<?php
+					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
+					{
+						echo '<option>' . $row['name'] . '</option>';
+					}
+					?>
+				</select>
+			</p>
+			<p><input type="submit" value="Select"></p>
 		</form>
 		<?php
 		$myQuery = 'SELECT fr.sku,
