@@ -1,9 +1,6 @@
 body {
 	font-family: helvetica;
 }
-h3 {
-	text-align: center;
-}
 form {
 	margin: 10px;
 	background-color: #ccc;
@@ -78,7 +75,7 @@ div {
 	padding: 25px;
 }
 .furnitureItems {
-	width: 25%;
+	width: 250px;
     float: left;
 }
 
