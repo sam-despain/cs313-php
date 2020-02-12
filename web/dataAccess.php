@@ -117,7 +117,7 @@ catch (PDOException $ex)
 			ORDER BY t.name;';
 		foreach ($db->query($myQuery) as $row)
 		{
-			echo '<div>';
+			echo '<div class="furnitureItems">';
 			echo '<h3>' . $row['tname'] . '</h3>';
 			echo '<img src="' . $row['link'] . '">';
 			echo '<p>SKU: #' . $row['sku'] . '</p>';
