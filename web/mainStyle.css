@@ -2,7 +2,7 @@ body {
 	font-family: helvetica;
 }
 h3 {
-	align: center;
+	text-align: center;
 }
 form {
 	margin: 10px;
