@@ -41,7 +41,7 @@ catch (PDOException $ex)
 		$stmt = $db->prepare($collectionQuery);
 		$stmt->execute();
 		$collectionInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		collection_id = $finishInput[0]['id'];
+		collection_id = $collectionInput[0]['id'];
 		
 		//$image = htmlspecialchars($_POST['imageInput']);
 		$sku = htmlspecialchars($_POST['skuInput']);
