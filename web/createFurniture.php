@@ -25,11 +25,8 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		$typeQuery = 'SELECT id, name FROM type ORDER BY id WHERE name = \'' . htmlspecialchars($_POST['type']) . '\';';
-		$stmt = $db->prepare($typeQuery);
-		$stmt->execute();
-		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		echo $typeInput;
+		
+		
 		$finishInput = htmlspecialchars($_POST['finish']);
 		$collectionInput = htmlspecialchars($_POST['collection']);
 		//$image = htmlspecialchars($_POST['imageInput']);
@@ -38,7 +35,10 @@ catch (PDOException $ex)
 		$height = htmlspecialchars($_POST['heightInput']);
 		$depth = htmlspecialchars($_POST['depthInput']);
 		/*
-		
+		$typeQuery = 'SELECT id, name FROM type ORDER BY id WHERE name = \'' . htmlspecialchars($_POST['type']) . '\';';
+		$stmt = $db->prepare($typeQuery);
+		$stmt->execute();
+		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		
 		$finishQuery = 'SELECT id, name FROM finish;';
 		$stmt = $db->prepare($finishQuery);
