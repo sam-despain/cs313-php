@@ -30,7 +30,7 @@ catch (PDOException $ex)
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$type_id = $typeInput[0]['id'];
-		
+		/*
 		$finishQuery = 'SELECT id, name FROM finish WHERE name = \'' . htmlspecialchars($_POST['finishInput']) . '\';';
 		$stmt = $db->prepare($finishQuery);
 		$stmt->execute();
@@ -41,7 +41,7 @@ catch (PDOException $ex)
 		$stmt = $db->prepare($collectionQuery);
 		$stmt->execute();
 		$collectionInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		collection_id = $collectionInput[0]['id'];
+		collection_id = $collectionInput[0]['id'];*/
 		
 		//$image = htmlspecialchars($_POST['imageInput']);
 		$sku = htmlspecialchars($_POST['skuInput']);
