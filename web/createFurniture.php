@@ -41,7 +41,7 @@ catch (PDOException $ex)
 		$stmt = $db->prepare($collectionQuery);
 		$stmt->execute();
 		$collectionInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		/*collection_id = $collectionInput[0]['id'];*/
+		$collection_id = $collectionInput[0]['id'];
 		
 		//$image = htmlspecialchars($_POST['imageInput']);
 		$sku = htmlspecialchars($_POST['skuInput']);
@@ -51,6 +51,15 @@ catch (PDOException $ex)
 		
 		$insertQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
 			VALUES (:type_id, :finish_id, :collection_id, :sku, :width, :height, :depth);';
+		$stmt->bindValue(':type_id', $type_id, PDO::PARAM_INT);
+		$stmt->bindValue(':finish_id', $finish_id, PDO::PARAM_INT);
+		$stmt->bindValue(':collection_id', $collection_id, PDO::PARAM_INT);
+		$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
+		$stmt->bindValue(':width', $width, PDO::PARAM_STR);
+		$stmt->bindValue(':height', $height, PDO::PARAM_STR);
+		$stmt->bindValue(':depth', $depth, PDO::PARAM_STR);
+		$stmt->execute();
+		echo $insertQuery;
 		?>
 		<p>Creating new furniture...</p>
 	</body>
