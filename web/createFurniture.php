@@ -36,9 +36,9 @@ catch (PDOException $ex)
 		$stmt->execute();
 		$finishInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$finish_id = $finishInput[0]['id'];
-		/*
+		
 		$collectionQuery = 'SELECT id, name FROM collection WHERE name = \'' . htmlspecialchars($_POST['collectionInput']) . '\';';
-		$stmt = $db->prepare($collectionQuery);
+		/*$stmt = $db->prepare($collectionQuery);
 		$stmt->execute();
 		$collectionInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		collection_id = $collectionInput[0]['id'];*/
