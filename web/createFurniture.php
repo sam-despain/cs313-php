@@ -25,14 +25,14 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		echo $type = htmlspecialchars($_POST['typeInput']);
-		echo $finish = htmlspecialchars($_POST['finishInput']);
-		echo $collection = htmlspecialchars($_POST['collectionInput']);
+		echo $type = htmlspecialchars($_POST['typeInput']) . "<br/>";
+		echo $finish = htmlspecialchars($_POST['finishInput']) . "<br/>";
+		echo $collection = htmlspecialchars($_POST['collectionInput']) . "<br/>";
 		//$image = htmlspecialchars($_POST['imageInput']);
-		echo $sku = htmlspecialchars(_POST['skuInput']);
-		echo $width = htmlspecialchars($_POST['widthInput']);
-		echo $height = htmlspecialchars($_POST['heightInput']);
-		echo $depth = htmlspecialchars($_POST['depthInput']);
+		echo $sku = htmlspecialchars($_POST['skuInput']) . "<br/>";
+		echo $width = htmlspecialchars($_POST['widthInput']) . "<br/>";
+		echo $height = htmlspecialchars($_POST['heightInput']) . "<br/>";
+		echo $depth = htmlspecialchars($_POST['depthInput']) . "<br/>";
 		
 		$myQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
 			VALUES (:type, :finish, :collection, :sku, :width, :height, :depth);';
