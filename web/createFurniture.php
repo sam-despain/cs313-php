@@ -39,8 +39,8 @@ catch (PDOException $ex)
 		
 		$collectionQuery = 'SELECT id, name FROM collection WHERE name = \'' . htmlspecialchars($_POST['collectionInput']) . '\';';
 		$stmt = $db->prepare($collectionQuery);
-		/*$stmt->execute();
-		$collectionInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$stmt->execute();
+		/*$collectionInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		collection_id = $collectionInput[0]['id'];*/
 		
 		//$image = htmlspecialchars($_POST['imageInput']);
