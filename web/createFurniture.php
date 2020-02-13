@@ -28,8 +28,8 @@ catch (PDOException $ex)
 		$typeQuery = 'SELECT id, name FROM type ORDER BY id WHERE name = \'' . htmlspecialchars($_POST['typeInput']) . '\';';
 		$stmt = $db->prepare($typeQuery);
 		$stmt->execute();
-		echo $typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		
+		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		echo $typeInput;
 		$finishInput = htmlspecialchars($_POST['finishInput']);
 		$collectionInput = htmlspecialchars($_POST['collectionInput']);
 		//$image = htmlspecialchars($_POST['imageInput']);
