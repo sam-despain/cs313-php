@@ -29,7 +29,7 @@ catch (PDOException $ex)
 		$stmt = $db->prepare($typeQuery);
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		var_dump($typeInput);
+		echo $type_id = $typeInput['id'];
 		$finishInput = htmlspecialchars($_POST['finish']);
 		$collectionInput = htmlspecialchars($_POST['collection']);
 		//$image = htmlspecialchars($_POST['imageInput']);
