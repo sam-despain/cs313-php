@@ -24,7 +24,7 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<form>
+		<form action="createFurniture.php" method="post">
 			<h2>Create New Furniture</h2>
 			<p>
 				<select name="typeInput">
