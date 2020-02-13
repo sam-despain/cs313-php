@@ -49,14 +49,7 @@ catch (PDOException $ex)
 		$stmt->execute();
 		$collections = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		
-		$type_id = 0;
-		foreach ($types as $t) {
-			echo $t['name'] . '<br/>' . $typeInput;
-			if ($t['name'] === $typeInput) {
-				$type_id = $t['id'];
-				echo $t['id'];
-			}
-		}
+		echo $type_id = $types[0]['id'];
 		
 		$insertQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
 			VALUES (:type, :finish, :collection, :sku, :width, :height, :depth);';
