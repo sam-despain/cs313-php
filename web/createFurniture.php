@@ -49,7 +49,7 @@ catch (PDOException $ex)
 		$stmt->execute();
 		$collections = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		
-		$type_id = NULL;
+		$type_id = 0;
 		foreach ($types as $t) {
 			if ($t['name'] == $typeInput) {
 				$type_id = $t['id'];
