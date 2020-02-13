@@ -39,7 +39,7 @@ catch (PDOException $ex)
 		$stmt->execute();
 		$types = stmt->fetchAll(PDO::FETCH_ASSOC);
 		var_dump($types);
-		
+		/*
 		$finishQuery = 'SELECT id, name FROM finish;';
 		$stmt = $db->prepare($finishQuery);
 		$stmt->execute();
@@ -51,7 +51,7 @@ catch (PDOException $ex)
 		$stmt->execute();
 		$collections = stmt->fetchAll(PDO::FETCH_ASSOC);
 		var_dump($collections);
-		
+		*/
 		$insertQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
 			VALUES (:type, :finish, :collection, :sku, :width, :height, :depth);';
 		?>
