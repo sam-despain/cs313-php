@@ -26,9 +26,8 @@ catch (PDOException $ex)
 	<body>
 		<form action="createFurniture.php" method="post">
 			<h2>Create New Furniture</h2>
-			<p>
+			<p>Furniture type:
 				<select name="typeInput">
-					<option>-Furniture type-</option>
 					<?php
 					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
 					{
@@ -37,9 +36,8 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>
+			<p>Finish:
 				<select name="finishInput">
-					<option>-Finish-</option>
 					<?php
 					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
 					{
@@ -48,9 +46,8 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>
+			<p>Collection:
 				<select name="collectionInput">
-					<option>-Collection-</option>
 					<?php
 					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
 					{
@@ -59,9 +56,9 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>	
-			<!--<p><input type="file" name="imageInput"></p>-->
-			<p><input type="text" name="skuInput" placeholder="SKU #"></p>
-			<p><input type="number" name="widthInput" placeholder="Width">
+			<p>Image:<input type="file" name="imageInput" accept="image/*"></p>
+			<p>SKU #:<input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
+			<p>Dimensions:<input type="number" name="widthInput" placeholder="Width">
 			<input type="number" name="heightInput" placeholder="Height">
 			<input type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Create"></p>
