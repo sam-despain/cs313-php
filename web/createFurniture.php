@@ -51,6 +51,7 @@ catch (PDOException $ex)
 		
 		$type_id = 0;
 		foreach ($types as $t) {
+			echo $t['name'];
 			if ($t['name'] == $typeInput) {
 				$type_id = $t['id'];
 			}
