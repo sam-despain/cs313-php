@@ -36,20 +36,20 @@ catch (PDOException $ex)
 		
 		$typeQuery = 'SELECT id, name FROM type;';
 		$stmt = $db->prepare($typeQuery);
-		$stmt->execute();/*
-		$types = stmt->fetchAll(PDO::FETCH_ASSOC);
+		$stmt->execute();
+		$types = $stmt->fetchAll(PDO::FETCH_ASSOC);/*
 		var_dump($types);
 		
 		$finishQuery = 'SELECT id, name FROM finish;';
 		$stmt = $db->prepare($finishQuery);
 		$stmt->execute();
-		$finishes = stmt->fetchAll(PDO::FETCH_ASSOC);
+		$finishes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		var_dump($finishes);
 		
 		$collectionQuery = 'SELECT id, name FROM collection;';
 		$stmt = $db->prepare($collectionQuery);
 		$stmt->execute();
-		$collections = stmt->fetchAll(PDO::FETCH_ASSOC);
+		$collections = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		var_dump($collections);
 		*/
 		$insertQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
