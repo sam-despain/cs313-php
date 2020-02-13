@@ -111,8 +111,8 @@ catch (PDOException $ex)
 			i.link,
 			t.name tname,
 			c.name cname,
-			fi.name fname FROM images i
-			JOIN furniture fr ON i.id = fr.imageid
+			fi.name fname FROM furniture fr
+			JOIN images i ON fr.imageid = i.id
 			JOIN type t ON t.id = fr.typeid
 			JOIN collection c ON c.id = fr.collectionid
 			JOIN finish fi ON fi.id = fr.finishid
