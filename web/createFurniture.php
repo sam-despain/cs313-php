@@ -37,9 +37,9 @@ catch (PDOException $ex)
 		$typeQuery = 'SELECT id, name FROM type;';
 		$stmt = $db->prepare($typeQuery);
 		$stmt->execute();
-		$types = $stmt->fetchAll(PDO::FETCH_ASSOC);/*
+		$types = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		var_dump($types);
-		
+		/*
 		$finishQuery = 'SELECT id, name FROM finish;';
 		$stmt = $db->prepare($finishQuery);
 		$stmt->execute();
