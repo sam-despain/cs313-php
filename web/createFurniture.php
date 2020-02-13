@@ -30,13 +30,13 @@ catch (PDOException $ex)
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$type_id = $typeInput[0]['id'];
-		/*
+		
 		$finishQuery = 'SELECT id, name FROM finish WHERE name = \'' . htmlspecialchars($_POST['finishInput']) . '\';';
 		$stmt = $db->prepare($finishQuery);
 		$stmt->execute();
 		$finishInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$finish_id = $finishInput[0]['id'];
-		
+		/*
 		$collectionQuery = 'SELECT id, name FROM collection WHERE name = \'' . htmlspecialchars($_POST['collectionInput']) . '\';';
 		$stmt = $db->prepare($collectionQuery);
 		$stmt->execute();
