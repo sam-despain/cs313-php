@@ -35,3 +35,6 @@ link varchar(255),
 
 INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
 VALUES ();
+
+SELECT id, name FROM type
+WHERE name = 'Console';

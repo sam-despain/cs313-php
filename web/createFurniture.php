@@ -25,19 +25,20 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		$typeInput = htmlspecialchars($_POST['typeInput']) . "<br/>";
-		$finishInput = htmlspecialchars($_POST['finishInput']) . "<br/>";
-		$collectionInput = htmlspecialchars($_POST['collectionInput']) . "<br/>";
-		//$image = htmlspecialchars($_POST['imageInput']);
-		$sku = htmlspecialchars($_POST['skuInput']) . "<br/>";
-		$width = htmlspecialchars($_POST['widthInput']) . "<br/>";
-		$height = htmlspecialchars($_POST['heightInput']) . "<br/>";
-		$depth = htmlspecialchars($_POST['depthInput']) . "<br/>";
-		
-		$typeQuery = 'SELECT id, name FROM type ORDER BY id;';
+		$typeQuery = 'SELECT id, name FROM type ORDER BY id WHERE name = \'' . htmlspecialchars($_POST['typeInput']) . '\';';
 		$stmt = $db->prepare($typeQuery);
 		$stmt->execute();
-		$types = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		echo $typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		
+		$finishInput = htmlspecialchars($_POST['finishInput']);
+		$collectionInput = htmlspecialchars($_POST['collectionInput']);
+		//$image = htmlspecialchars($_POST['imageInput']);
+		$sku = htmlspecialchars($_POST['skuInput']);
+		$width = htmlspecialchars($_POST['widthInput']);
+		$height = htmlspecialchars($_POST['heightInput']);
+		$depth = htmlspecialchars($_POST['depthInput']);
+		/*
+		
 		
 		$finishQuery = 'SELECT id, name FROM finish;';
 		$stmt = $db->prepare($finishQuery);
@@ -47,9 +48,8 @@ catch (PDOException $ex)
 		$collectionQuery = 'SELECT id, name FROM collection;';
 		$stmt = $db->prepare($collectionQuery);
 		$stmt->execute();
-		$collections = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$collections = $stmt->fetchAll(PDO::FETCH_ASSOC);*/
 		
-		echo $type_id = $types[0]['name'];
 		
 		$insertQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
 			VALUES (:type, :finish, :collection, :sku, :width, :height, :depth);';
