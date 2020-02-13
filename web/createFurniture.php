@@ -59,7 +59,7 @@ catch (PDOException $ex)
 		$stmt->bindValue(':height', $height, PDO::PARAM_STR);
 		$stmt->bindValue(':depth', $depth, PDO::PARAM_STR);
 		$stmt->execute();
-		echo $insertQuery;
+		//echo $insertQuery;
 		?>
 		<p>Creating new furniture...</p>
 	</body>
