@@ -65,9 +65,8 @@ catch (PDOException $ex)
 		</form>
 		<form action="dataDisplay.php" method="post">
 			<h2>Search for furniture</h2>
-			<p>
+			<p>Furniture type:
 				<select name="type">
-					<option>-Furniture type-</option>
 					<?php
 					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
 					{
@@ -76,9 +75,8 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>
+			<p>Finish:
 				<select name="finish">
-					<option>-Finish-</option>
 					<?php
 					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
 					{
@@ -87,9 +85,8 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>
+			<p>Collection:
 				<select name="collection">
-					<option>-Collection-</option>
 					<?php
 					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
 					{
