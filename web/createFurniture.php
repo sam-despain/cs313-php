@@ -25,7 +25,7 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		$typeQuery = 'SELECT id, name FROM type ORDER BY id WHERE name = \'' . htmlspecialchars($_POST['type']) . '\';';
+		$typeQuery = 'SELECT id, name FROM type ORDER BY id WHERE name = \'' . htmlspecialchars($_POST['typeInput']) . '\';';
 		$stmt = $db->prepare($typeQuery);
 		echo $typeQuery;
 		$finishInput = htmlspecialchars($_POST['finish']);
