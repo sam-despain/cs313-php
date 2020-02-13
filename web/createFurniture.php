@@ -61,6 +61,10 @@ catch (PDOException $ex)
 		$stmt->bindValue(':height', $height, PDO::PARAM_STR);
 		$stmt->bindValue(':depth', $depth, PDO::PARAM_STR);
 		$stmt->execute();
+		
+		$newPage = "dataAccess.php";
+		header ("Location: $newPage");
+		die();
 		?>
 		<p>Creating new furniture...</p>
 	</body>
