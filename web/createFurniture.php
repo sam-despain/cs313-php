@@ -51,11 +51,10 @@ catch (PDOException $ex)
 		
 		$type_id = 0;
 		foreach ($types as $t) {
-			echo $t['id'];
 			if ($t['name'] == $typeInput) {
 				$type_id = $t['id'];
+				echo $t['id'];
 			}
-			echo $type_id;
 		}
 		
 		$insertQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
