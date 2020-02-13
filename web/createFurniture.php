@@ -26,6 +26,7 @@ catch (PDOException $ex)
 	<body>
 		<?php
 		$typeQuery = 'SELECT id, name FROM type ORDER BY id WHERE name = \'' . htmlspecialchars($_POST['type']) . '\';';
+		$stmt = $db->prepare($typeQuery);
 		
 		$finishInput = htmlspecialchars($_POST['finish']);
 		$collectionInput = htmlspecialchars($_POST['collection']);
@@ -36,7 +37,6 @@ catch (PDOException $ex)
 		$depth = htmlspecialchars($_POST['depthInput']);
 		/*
 		
-		$stmt = $db->prepare($typeQuery);
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		
