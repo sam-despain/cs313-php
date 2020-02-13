@@ -30,8 +30,8 @@ catch (PDOException $ex)
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		echo $typeInput;
-		$finishInput = htmlspecialchars($_POST['finishInput']);
-		$collectionInput = htmlspecialchars($_POST['collectionInput']);
+		$finishInput = htmlspecialchars($_POST['finish']);
+		$collectionInput = htmlspecialchars($_POST['collection']);
 		//$image = htmlspecialchars($_POST['imageInput']);
 		$sku = htmlspecialchars($_POST['skuInput']);
 		$width = htmlspecialchars($_POST['widthInput']);
