@@ -55,8 +55,7 @@ catch (PDOException $ex)
 					}
 					?>
 				</select>
-			</p>	
-			<p>Image:<input type="file" name="imageInput" accept="image/*"></p>
+			</p>
 			<p>SKU #:<input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
 			<p>Dimensions:<input type="number" name="widthInput" placeholder="Width">
 			<input type="number" name="heightInput" placeholder="Height">

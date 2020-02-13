@@ -43,23 +43,24 @@ catch (PDOException $ex)
 		$collectionInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$collection_id = $collectionInput[0]['id'];
 		
-		//$image = htmlspecialchars($_POST['imageInput']);
+		$image = 11;
 		$sku = htmlspecialchars($_POST['skuInput']);
 		$width = htmlspecialchars($_POST['widthInput']);
 		$height = htmlspecialchars($_POST['heightInput']);
 		$depth = htmlspecialchars($_POST['depthInput']);
 		
-		$insertQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
-			VALUES (:type_id, :finish_id, :collection_id, :sku, :width, :height, :depth);';
-		/*$stmt = $db->prepare($insertQuery);
+		$insertQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, imageID, sku, width, height, depth)
+			VALUES (:type_id, :finish_id, :collection_id, :image, :sku, :width, :height, :depth);';
+	*$stmt = $db->prepare($insertQuery);
 		$stmt->bindValue(':type_id', $type_id, PDO::PARAM_INT);
 		$stmt->bindValue(':finish_id', $finish_id, PDO::PARAM_INT);
 		$stmt->bindValue(':collection_id', $collection_id, PDO::PARAM_INT);
+		$stmt->bindValue(':image', $image, PDO::PARAM_INT);
 		$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
 		$stmt->bindValue(':width', $width, PDO::PARAM_STR);
 		$stmt->bindValue(':height', $height, PDO::PARAM_STR);
 		$stmt->bindValue(':depth', $depth, PDO::PARAM_STR);
-		$stmt->execute();*/
+		$stmt->execute();
 		?>
 		<p>Creating new furniture...</p>
 	</body>
