@@ -29,30 +29,28 @@ catch (PDOException $ex)
 		$stmt = $db->prepare($typeQuery);
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		echo $typeInput[0]['id'];
-		$finishInput = htmlspecialchars($_POST['finish']);
-		$collectionInput = htmlspecialchars($_POST['collection']);
+		$type_id = $typeInput[0]['id'];
+		
+		$finishQuery = 'SELECT id, name FROM finish WHERE name = \'' . htmlspecialchars($_POST['finishInput']) . '\';';
+		$stmt = $db->prepare($finishQuery);
+		$stmt->execute();
+		$finishInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$finish_id = $finishInput[0]['id'];
+		
+		$collectionQuery = 'SELECT id, name FROM collection WHERE name = \'' . htmlspecialchars($_POST['collectionInput']) . '\';';
+		$stmt = $db->prepare($collectionQuery);
+		$stmt->execute();
+		$collectionInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		collection_id = $finishInput[0]['id'];
+		
 		//$image = htmlspecialchars($_POST['imageInput']);
 		$sku = htmlspecialchars($_POST['skuInput']);
 		$width = htmlspecialchars($_POST['widthInput']);
 		$height = htmlspecialchars($_POST['heightInput']);
 		$depth = htmlspecialchars($_POST['depthInput']);
-		/*
-		
-		
-		$finishQuery = 'SELECT id, name FROM finish;';
-		$stmt = $db->prepare($finishQuery);
-		$stmt->execute();
-		$finishes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		
-		$collectionQuery = 'SELECT id, name FROM collection;';
-		$stmt = $db->prepare($collectionQuery);
-		$stmt->execute();
-		$collections = $stmt->fetchAll(PDO::FETCH_ASSOC);*/
-		
 		
 		$insertQuery = 'INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
-			VALUES (:type, :finish, :collection, :sku, :width, :height, :depth);';
+			VALUES (:type_id, :finish_id, :collection_id, :sku, :width, :height, :depth);';
 		?>
 		<p>Creating new furniture...</p>
 	</body>
