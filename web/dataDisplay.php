@@ -39,7 +39,7 @@ include 'back.html';
 			echo '<div class="fittedDiv">';
 			echo '<h3>' . $row['name'] . '</h3>';
 			echo '<img src="' . $row['image'] . '">';
-			echo '<p>SKU: #' . $row['sku'] . '</p>';
+			//echo '<p>SKU: #' . $row['sku'] . '</p>';
 			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
 			echo '</div>';
 		}
