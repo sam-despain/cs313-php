@@ -25,16 +25,18 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
+		$sku = htmlspecialchars($_POST['skuInput']);
+		
 		$typeQuery = 'SELECT id, name FROM type WHERE name = \'' . htmlspecialchars($_POST['typeInput']) . '\';';
 		$stmt = $db->prepare($typeQuery);
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$type_id = $typeInput[0]['id'];
-		$sku = htmlspecialchars($_POST['skuInput']);
+		
 		$width = htmlspecialchars($_POST['widthInput']);
 		$height = htmlspecialchars($_POST['heightInput']);
 		$depth = htmlspecialchars($_POST['depthInput']);
-		
+		/*
 		$insertQuery = 'INSERT INTO furniture (typeID, sku, width, height, depth)
 			VALUES (:type_id, :sku, :width, :height, :depth);';
 		$stmt = $db->prepare($insertQuery);
@@ -47,7 +49,7 @@ catch (PDOException $ex)
 		
 		$newPage = "dataAccess.php";
 		header ("Location: $newPage");
-		die();
+		die();*/
 		?>
 	</body>
 </html>
