@@ -24,12 +24,11 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<div class="fittedDiv"><a href="dataAccess.php">Back</a></div>
 		<?php
 		$collection = htmlspecialchars($_POST["collection"]);
 		$finish = htmlspecialchars($_POST["finish"]);
 		$type = htmlspecialchars($_POST["type"]);
-		$sku = htmlspecialchars($POST["sku"]);
+		$sku = htmlspecialchars($_POST["sku"]);
 		
 		$myQuery = 'SELECT fr.sku,
 			fr.width,
@@ -58,5 +57,6 @@ catch (PDOException $ex)
 			echo '</div>';
 		}
 		?>
+		<div class="fittedDiv"><a href="dataAccess.php">Back</a></div>
 	</body>
 </html>
