@@ -21,6 +21,7 @@ catch (PDOException $ex)
 	echo 'Error!: ' . $ex->getMessage();
 	die();
 }
+include 'back.html';
 ?>
 <html>
 	<body>
@@ -48,9 +49,6 @@ catch (PDOException $ex)
 			header ("Location: $newPage");
 		}
 		?>
-		<div class="fittedDiv"><a href="dataAccess.php">Back</a></div>
-		<?php
-		die();
-		?>
+		
 	</body>
 </html>
