@@ -29,6 +29,7 @@ catch (PDOException $ex)
 		$collection = htmlspecialchars($_POST["collection"]);
 		$finish = htmlspecialchars($_POST["finish"]);
 		$type = htmlspecialchars($_POST["type"]);
+		$sku = htmlspecialchars($POST["sku"]);
 		
 		$myQuery = 'SELECT fr.sku,
 			fr.width,
@@ -42,7 +43,7 @@ catch (PDOException $ex)
 			JOIN type t ON t.id = fr.typeid
 			JOIN collection c ON c.id = fr.collectionid
 			JOIN finish fi ON fi.id = fr.finishid
-			WHERE (c.name = \'' . $collection . '\' OR fi.name = \'' . $finish . '\') OR t.name = \'' . $type . '\'
+			WHERE ((c.name = \'' . $collection . '\' OR fi.name = \'' . $finish . '\') OR t.name = \'' . $type . '\) OR fr.sku = \'' . $sku . '\''
 			ORDER BY t.name;';
 		
 		foreach ($db->query($myQuery) as $row)
