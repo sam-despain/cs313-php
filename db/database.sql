@@ -34,15 +34,8 @@ ID SERIAL PRIMARY KEY,
 link varchar(255),
 );
 
-INSERT INTO type (name, image) VALUES ('Bookcase', 'bookcase.jpg');
-INSERT INTO type (name, image) VALUES ('Chair', 'chair.jpg');
-INSERT INTO type (name, image) VALUES ('Coffee table', 'coffee_table.jpg');
-INSERT INTO type (name, image) VALUES ('Console', 'console.jpg');
-INSERT INTO type (name, image) VALUES ('Desk', 'desk.jpg');
-INSERT INTO type (name, image) VALUES ('Dresser', 'dresser.jpg');
-INSERT INTO type (name, image) VALUES ('End table', 'end_table.jpg');
-INSERT INTO type (name, image) VALUES ('File cabinet', 'file_cabinet.jpg');
-INSERT INTO furniture (typeID, finishID, collectionID, sku, width, height, depth)
+
+INSERT INTO furniture (typeID, sku, width, height, depth)
 VALUES ();
 
 SELECT id, name FROM type

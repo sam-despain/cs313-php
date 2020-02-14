@@ -26,7 +26,7 @@ catch (PDOException $ex)
 	<body>
 		<form class="fittedDiv" action="createFurniture.php" method="post">
 			<h2>Create new furniture</h2>
-			<p>SKU #<br><input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
+			<p>SKU #<br><input type="number" name="skuInput"></p>
 			<p class="fittedDiv" style="padding-right: 20px;">Furniture type<br>
 				<select name="typeInput">
 					<?php
@@ -103,7 +103,7 @@ catch (PDOException $ex)
 		<br>
 		<?php
 		$myQuery = 'SELECT t.name, t.image, f.sku, f.width, f.height, f.depth
-			 FROM furniture f
+			FROM furniture f
 			JOIN type t ON t.id = f.typeid
 			ORDER BY t.name;';
 		foreach ($db->query($myQuery) as $row)
