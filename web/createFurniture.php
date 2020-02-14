@@ -21,7 +21,7 @@ catch (PDOException $ex)
 	echo 'Error!: ' . $ex->getMessage();
 	die();
 }
-include 'back.html';
+//include 'back.html';
 ?>
 <html>
 	<body>
