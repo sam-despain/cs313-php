@@ -26,6 +26,7 @@ catch (PDOException $ex)
 	<body>
 		<form class="fittedDiv" action="createFurniture.php" method="post">
 			<h2>Create new furniture</h2>
+			<p>SKU #<br><input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
 			<p class="fittedDiv" style="padding-right: 20px;">Furniture type<br>
 				<select name="typeInput">
 					<?php
@@ -56,7 +57,6 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>SKU #<br><input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
 			<p>Dimensions<br>
 			<input type="number" name="widthInput" placeholder="Width">
 			<input type="number" name="heightInput" placeholder="Height">
@@ -65,7 +65,8 @@ catch (PDOException $ex)
 		</form>
 		<form class="fittedDiv" action="dataDisplay.php" method="post">
 			<h2>Search for furniture</h2>
-			<p>Furniture type<br>
+			<p>SKU #<br><input type="text" name="sku" placeholder="AA0000 or ZAAA-0000"></p>
+			<p class="fittedDiv">Furniture type<br>
 				<select name="type">
 					<option></option>
 					<?php
@@ -76,7 +77,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>Finish<br>
+			<p class="fittedDiv">Finish<br>
 				<select name="finish">
 					<option></option>
 					<?php
@@ -87,7 +88,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>Collection<br>
+			<p class="fittedDiv">Collection<br>
 				<select name="collection">
 					<option></option>
 					<?php
@@ -98,7 +99,6 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>SKU #<br><input type="text" name="sku" placeholder="AA0000 or ZAAA-0000"></p>
 			<p><input type="submit" value="Search"></p>
 		</form>
 		<form class="fittedDiv" action="modifyFurniture.php" method="post">
@@ -114,7 +114,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>Furniture type<br>
+			<p>NEW Furniture type<br>
 				<select name="type">
 					<option></option>
 					<?php
@@ -125,7 +125,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>Finish<br>
+			<p>NEW Finish<br>
 				<select name="finish">
 					<option></option>
 					<?php
@@ -136,7 +136,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>Collection<br>
+			<p>NEW Collection<br>
 				<select name="collection">
 					<option></option>
 					<?php
@@ -158,39 +158,6 @@ catch (PDOException $ex)
 					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
 					{
 						echo '<option>' . $row['sku'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>Furniture type<br>
-				<select name="type">
-					<option></option>
-					<?php
-					foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>Finish<br>
-				<select name="finish">
-					<option></option>
-					<?php
-					foreach ($db->query('SELECT name FROM finish ORDER BY name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>Collection<br>
-				<select name="collection">
-					<option></option>
-					<?php
-					foreach ($db->query('SELECT name FROM collection ORDER BY name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
 					}
 					?>
 				</select>

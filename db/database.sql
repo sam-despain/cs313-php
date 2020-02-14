@@ -1,7 +1,7 @@
 CREATE DATABASE furnitureZone;
 
 CREATE TABLE furniture (
-SKU varchar(255) PRIMARY KEY,
+SKU varchar(255) PRIMARY KEY UNIQUE,
 collectionID int REFERENCES collection(ID),
 typeID int REFERENCES type(ID),
 width float,
