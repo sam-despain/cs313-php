@@ -73,7 +73,6 @@ catch (PDOException $ex)
 			<h2>Modify furniture</h2>
 			<p>SKU #<br>
 				<select name="sku">
-					<option></option>
 					<?php
 					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
 					{
@@ -100,7 +99,6 @@ catch (PDOException $ex)
 			<h2>Remove furniture</h2>
 			<p>SKU #<br>
 				<select name="sku">
-					<option></option>
 					<?php
 					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
 					{
