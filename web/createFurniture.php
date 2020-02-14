@@ -36,7 +36,7 @@ catch (PDOException $ex)
 		$width = htmlspecialchars($_POST['widthInput']);
 		$height = htmlspecialchars($_POST['heightInput']);
 		$depth = htmlspecialchars($_POST['depthInput']);
-		/*
+		
 		$insertQuery = 'INSERT INTO furniture (typeID, sku, width, height, depth)
 			VALUES (:type_id, :sku, :width, :height, :depth);';
 		$stmt = $db->prepare($insertQuery);
@@ -49,7 +49,7 @@ catch (PDOException $ex)
 		
 		$newPage = "dataAccess.php";
 		header ("Location: $newPage");
-		die();*/
+		die();
 		echo "All's good?";
 		?>
 	</body>
