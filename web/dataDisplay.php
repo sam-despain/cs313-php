@@ -43,11 +43,14 @@ catch (PDOException $ex)
 			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
 			echo '</div>';
 		}
+		$newPage = "dataAccess.php";
 		if ($type = NULL && $sku = NULL) {
-			$newPage = "dataAccess.php";
 			header ("Location: $newPage");
 		}
 		?>
 		<div class="fittedDiv"><a href="dataAccess.php">Back</a></div>
+		<?php
+		die();
+		?>
 	</body>
 </html>
