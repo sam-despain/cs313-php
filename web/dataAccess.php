@@ -60,7 +60,7 @@ catch (PDOException $ex)
 		</form>
 		<form class="fittedDiv" action="createFurniture.php" method="post">
 			<h2>Create New Furniture</h2>
-			<p class="fittedDiv" style="padding-right: 10px;">Furniture type<br>
+			<p class="fittedDiv" style="padding-right: 20px;">Furniture type<br>
 				<select name="typeInput">
 					<?php
 					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
@@ -70,7 +70,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p class="fittedDiv" style="padding-right: 10px;">Finish<br>
+			<p class="fittedDiv" style="padding-right: 20px;">Finish<br>
 				<select name="finishInput">
 					<?php
 					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
