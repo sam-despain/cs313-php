@@ -27,9 +27,9 @@ include 'back.html';
 	<body>
 		<?php
 		$type = htmlspecialchars($_POST["type"]);
-		echo $sku = htmlspecialchars($_POST["sku"]);
+		$sku = htmlspecialchars($_POST["sku"]);
 		if ($sku == NULL) {
-			echo $sku = 0;
+			$sku = 0;
 		}
 		
 		$myQuery = 'SELECT t.name, t.image, f.sku, f.width, f.height, f.depth
