@@ -47,7 +47,6 @@ catch (PDOException $ex)
 			$newPage = "dataAccess.php";
 			header ("Location: $newPage");
 		}
-		die();
 		?>
 		<div class="fittedDiv"><a href="dataAccess.php">Back</a></div>
 	</body>
