@@ -39,7 +39,7 @@ catch (PDOException $ex)
 		
 		$insertQuery = 'INSERT INTO furniture (typeID, sku, width, height, depth)
 				VALUES (:type_id, :sku, :width, :height, :depth);';
-		if ($sku != NULL) {
+		if ($sku != NULL &&  $width != NULL && $height != NULL && $depth != NULL) {
 			$stmt = $db->prepare($insertQuery);
 			$stmt->bindValue(':type_id', $type_id, PDO::PARAM_INT);
 			$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
