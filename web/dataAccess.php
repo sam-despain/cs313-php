@@ -58,9 +58,9 @@ catch (PDOException $ex)
 			</p>
 			<p>SKU #<br><input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
 			<p>Dimensions<br>
-			<input type="number" name="widthInput" placeholder="Width"><br>
-			<input type="number" name="heightInput" placeholder="Height"><br>
-			<input type="number" name="depthInput" placeholder="Depth"></p>
+			<input width="36" type="number" name="widthInput" placeholder="Width"><br>
+			<input width="36" type="number" name="heightInput" placeholder="Height"><br>
+			<input width="36" type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Create"></p>
 		</form>
 		<form class="fittedDiv" action="dataDisplay.php" method="post">
@@ -97,6 +97,7 @@ catch (PDOException $ex)
 			</p>
 			<p><input type="submit" value="Search"></p>
 		</form>
+		<br>
 		<?php
 		$myQuery = 'SELECT fr.sku,
 			fr.width,
