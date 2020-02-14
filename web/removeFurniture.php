@@ -28,10 +28,11 @@ catch (PDOException $ex)
 		echo $sku = htmlspecialchars($_POST['sku']);
 		
 		$deleteQuery = 'DELETE FROM furniture WHERE sku = :sku;';
-		$stmt = $db->prepare($deleteQuery);
-		$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
-		$stmt->execute();
-		
+		if ($sku != NULL) {
+			$stmt = $db->prepare($deleteQuery);
+			$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
+			$stmt->execute();
+		}
 		$newPage = "dataAccess.php";
 		header ("Location: $newPage");
 		die();
