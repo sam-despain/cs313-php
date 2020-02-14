@@ -105,6 +105,7 @@ catch (PDOException $ex)
 			<h2>Modify furniture</h2>
 			<p>SKU #<br>
 				<select name="sku">
+					<option></option>
 					<?php
 					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
 					{
@@ -115,6 +116,7 @@ catch (PDOException $ex)
 			</p>
 			<p>Furniture type<br>
 				<select name="type">
+					<option></option>
 					<?php
 					foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row)
 					{
@@ -125,6 +127,7 @@ catch (PDOException $ex)
 			</p>
 			<p>Finish<br>
 				<select name="finish">
+					<option></option>
 					<?php
 					foreach ($db->query('SELECT name FROM finish ORDER BY name;') as $row)
 					{
@@ -135,6 +138,7 @@ catch (PDOException $ex)
 			</p>
 			<p>Collection<br>
 				<select name="collection">
+					<option></option>
 					<?php
 					foreach ($db->query('SELECT name FROM collection ORDER BY name;') as $row)
 					{
@@ -149,6 +153,7 @@ catch (PDOException $ex)
 			<h2>Remove furniture</h2>
 			<p>SKU #<br>
 				<select name="sku">
+					<option></option>
 					<?php
 					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
 					{
@@ -159,6 +164,7 @@ catch (PDOException $ex)
 			</p>
 			<p>Furniture type<br>
 				<select name="type">
+					<option></option>
 					<?php
 					foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row)
 					{
@@ -169,6 +175,7 @@ catch (PDOException $ex)
 			</p>
 			<p>Finish<br>
 				<select name="finish">
+					<option></option>
 					<?php
 					foreach ($db->query('SELECT name FROM finish ORDER BY name;') as $row)
 					{
@@ -179,6 +186,7 @@ catch (PDOException $ex)
 			</p>
 			<p>Collection<br>
 				<select name="collection">
+					<option></option>
 					<?php
 					foreach ($db->query('SELECT name FROM collection ORDER BY name;') as $row)
 					{
