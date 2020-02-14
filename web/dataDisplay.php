@@ -31,7 +31,7 @@ catch (PDOException $ex)
 		$type = htmlspecialchars($_POST["type"]);
 		$sku = htmlspecialchars($POST["sku"]);
 		
-		$myQuery = 'SELECT fr.sku,
+		echo $myQuery = 'SELECT fr.sku,
 			fr.width,
 			fr.height,
 			fr.depth,
