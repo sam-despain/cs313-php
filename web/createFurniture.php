@@ -50,6 +50,7 @@ catch (PDOException $ex)
 		$newPage = "dataAccess.php";
 		header ("Location: $newPage");
 		die();*/
+		echo "All's good?";
 		?>
 	</body>
 </html>
