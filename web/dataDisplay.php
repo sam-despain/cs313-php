@@ -28,11 +28,14 @@ include 'back.html';
 		<?php
 		$type = htmlspecialchars($_POST["type"]);
 		$sku = htmlspecialchars($_POST["sku"]);
+		if ($sku = NULL) {
+			$sku = 0;
+		}
 		
 		$myQuery = 'SELECT t.name, t.image, f.sku, f.width, f.height, f.depth
 			FROM furniture f
 			JOIN type t ON t.id = f.typeid
-			WHERE (name = \'' . $type . '\') OR (sku = ' . $sku . ')
+			WHERE name = \'' . $type . '\' OR sku = ' . $sku . '
 			ORDER BY t.name;';
 		
 		foreach ($db->query($myQuery) as $row) {
