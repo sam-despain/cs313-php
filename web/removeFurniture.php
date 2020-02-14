@@ -26,7 +26,7 @@ include 'back.html';
 <html>
 	<body>
 		<?php
-		echo $sku = htmlspecialchars($_POST['sku']);
+		$sku = htmlspecialchars($_POST['sku']);
 		
 		$deleteQuery = 'DELETE FROM furniture WHERE sku = :sku;';
 		if ($sku != NULL) {
