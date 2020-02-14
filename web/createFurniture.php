@@ -22,6 +22,7 @@ catch (PDOException $ex)
 	die();
 }
 include 'back.html';
+echo "<h1>Be sure to use a unique SKU number.</h1>";
 ?>
 <html>
 	<body>
