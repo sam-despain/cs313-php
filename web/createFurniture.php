@@ -36,9 +36,10 @@ catch (PDOException $ex)
 		$width = htmlspecialchars($_POST['widthInput']);
 		$height = htmlspecialchars($_POST['heightInput']);
 		$depth = htmlspecialchars($_POST['depthInput']);
-		if ($sku != NULL) {
-			$insertQuery = 'INSERT INTO furniture (typeID, sku, width, height, depth)
+		
+		$insertQuery = 'INSERT INTO furniture (typeID, sku, width, height, depth)
 				VALUES (:type_id, :sku, :width, :height, :depth);';
+		if ($sku != NULL) {
 			$stmt = $db->prepare($insertQuery);
 			$stmt->bindValue(':type_id', $type_id, PDO::PARAM_INT);
 			$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
