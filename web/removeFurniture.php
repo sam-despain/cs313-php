@@ -25,8 +25,8 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<?php
-		echo $sku = htmlspecialchars($_POST['skuInput']);
-		/*
+		echo $sku = htmlspecialchars($_POST['sku']);
+		
 		$deleteQuery = 'DELETE FROM furniture WHERE sku = :sku;';
 		$stmt = $db->prepare($deleteQuery);
 		$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
@@ -34,7 +34,7 @@ catch (PDOException $ex)
 		
 		$newPage = "dataAccess.php";
 		header ("Location: $newPage");
-		die();*/
+		die();
 		?>
 	</body>
 </html>
