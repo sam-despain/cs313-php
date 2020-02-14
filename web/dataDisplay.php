@@ -44,7 +44,7 @@ include 'back.html';
 			echo '</div>';
 		}
 		$newPage = "dataAccess.php";
-		header ("Location: $newPage");
+		//header ("Location: $newPage");
 		?>
 		
 	</body>
