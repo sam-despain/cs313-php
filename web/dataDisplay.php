@@ -34,7 +34,7 @@ include 'back.html';
 			JOIN type t ON t.id = f.typeid
 			WHERE name = \'' . $type . '\' OR sku = \'' . $sku . '\'
 			ORDER BY t.name;';
-		
+		/*
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div class="fittedDiv">';
@@ -43,7 +43,7 @@ include 'back.html';
 			echo '<p>SKU: #' . $row['sku'] . '</p>';
 			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
 			echo '</div>';
-		}
+		}*/
 		$newPage = "dataAccess.php";
 		if ($type = NULL && $sku = NULL) {
 			header ("Location: $newPage");
