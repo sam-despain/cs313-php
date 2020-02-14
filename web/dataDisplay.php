@@ -31,7 +31,7 @@ catch (PDOException $ex)
 		$myQuery = 'SELECT t.name, t.image, f.sku, f.width, f.height, f.depth
 			FROM furniture f
 			JOIN type t ON t.id = f.typeid
-			WHERE t.name = \'' . $type . '\' OR fr.sku = \'' . $sku . '\'
+			WHERE name = \'' . $type . '\' OR sku = \'' . $sku . '\'
 			ORDER BY t.name;';
 		
 		foreach ($db->query($myQuery) as $row)
