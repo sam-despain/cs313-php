@@ -28,7 +28,7 @@ include 'back.html';
 		<?php
 		$type = htmlspecialchars($_POST["type"]);
 		echo $sku = htmlspecialchars($_POST["sku"]);
-		if ($sku = NULL) {
+		if ($sku == NULL) {
 			echo $sku = 0;
 		}
 		
