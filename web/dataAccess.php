@@ -26,7 +26,7 @@ catch (PDOException $ex)
 	<body>
 		<form class="fittedDiv" action="createFurniture.php" method="post">
 			<h2>Create New Furniture</h2>
-			<p>Furniture type:
+			<p>Furniture type<br>
 				<select name="typeInput">
 					<?php
 					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
@@ -36,7 +36,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>Finish:
+			<p>Finish<br>
 				<select name="finishInput">
 					<?php
 					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
@@ -46,7 +46,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>Collection:
+			<p>Collection<br>
 				<select name="collectionInput">
 					<?php
 					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
@@ -56,15 +56,16 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>SKU #:<input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
-			<p>Dimensions:<input type="number" name="widthInput" placeholder="Width">
-			<input type="number" name="heightInput" placeholder="Height">
+			<p>SKU #<br><input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
+			<p>Dimensions<br>
+			<input type="number" name="widthInput" placeholder="Width"><br>
+			<input type="number" name="heightInput" placeholder="Height"><br>
 			<input type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Create"></p>
 		</form>
 		<form class="fittedDiv" action="dataDisplay.php" method="post">
 			<h2>Search for furniture</h2>
-			<p>Furniture type:
+			<p>Furniture type<br>
 				<select name="type">
 					<?php
 					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
@@ -74,7 +75,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>Finish:
+			<p>Finish<br>
 				<select name="finish">
 					<?php
 					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
@@ -84,7 +85,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p>Collection:
+			<p>Collection<br>
 				<select name="collection">
 					<?php
 					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
