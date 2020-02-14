@@ -45,7 +45,7 @@ catch (PDOException $ex)
 		</form>
 		<form class="fittedDiv" action="dataDisplay.php" method="post">
 			<h2>Search for furniture</h2>
-			<p>
+			<p>Furniture type<br>
 				<select name="sku">
 					<option></option>
 					<?php
@@ -56,7 +56,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p class="fittedDiv">Furniture type<br>
+			<p>Furniture type<br>
 				<select name="type">
 					<option></option>
 					<?php
