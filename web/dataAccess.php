@@ -80,7 +80,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
-			<p class="fittedDiv" style="padding-right: 10px;">Collection<br>
+			<p class="fittedDiv" style="padding-right: 20px;">Collection<br>
 				<select name="collectionInput">
 					<?php
 					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
