@@ -24,6 +24,40 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
+		<form class="fittedDiv" action="dataDisplay.php" method="post">
+			<h2>Search for furniture</h2>
+			<p>Furniture type<br>
+				<select name="type">
+					<?php
+					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
+					{
+						echo '<option>' . $row['name'] . '</option>';
+					}
+					?>
+				</select>
+			</p>
+			<p>Finish<br>
+				<select name="finish">
+					<?php
+					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
+					{
+						echo '<option>' . $row['name'] . '</option>';
+					}
+					?>
+				</select>
+			</p>
+			<p>Collection<br>
+				<select name="collection">
+					<?php
+					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
+					{
+						echo '<option>' . $row['name'] . '</option>';
+					}
+					?>
+				</select>
+			</p>
+			<p><input type="submit" value="Search"></p>
+		</form>
 		<form class="fittedDiv" action="createFurniture.php" method="post">
 			<h2>Create New Furniture</h2>
 			<p>Furniture type<br>
@@ -58,44 +92,10 @@ catch (PDOException $ex)
 			</p>
 			<p>SKU #<br><input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
 			<p>Dimensions<br>
-			<input width="36" type="number" name="widthInput" placeholder="Width"><br>
-			<input width="36" type="number" name="heightInput" placeholder="Height"><br>
-			<input width="36" type="number" name="depthInput" placeholder="Depth"></p>
+			<input width="36px" type="number" name="widthInput" placeholder="Width"><br>
+			<input width="36px" type="number" name="heightInput" placeholder="Height"><br>
+			<input width="36px" type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Create"></p>
-		</form>
-		<form class="fittedDiv" action="dataDisplay.php" method="post">
-			<h2>Search for furniture</h2>
-			<p>Furniture type<br>
-				<select name="type">
-					<?php
-					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>Finish<br>
-				<select name="finish">
-					<?php
-					foreach ($db->query('SELECT * FROM finish ORDER BY finish.name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>Collection<br>
-				<select name="collection">
-					<?php
-					foreach ($db->query('SELECT * FROM collection ORDER BY collection.name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p><input type="submit" value="Search"></p>
 		</form>
 		<br>
 		<?php
