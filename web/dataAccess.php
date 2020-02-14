@@ -72,6 +72,7 @@ catch (PDOException $ex)
 					?>
 				</select>
 			</p>
+			<p>NEW SKU #<br><input type="number" name="skuInput"></p>
 			<p>NEW Furniture type<br>
 				<select name="type">
 					<option></option>

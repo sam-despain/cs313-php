@@ -49,6 +49,5 @@ catch (PDOException $ex)
 		header ("Location: $newPage");
 		die();
 		?>
-		<p>Creating new furniture...</p>
 	</body>
 </html>
