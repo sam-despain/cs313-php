@@ -45,7 +45,17 @@ catch (PDOException $ex)
 		</form>
 		<form class="fittedDiv" action="dataDisplay.php" method="post">
 			<h2>Search for furniture</h2>
-			<p>SKU #<br><input type="number" name="sku"></p>
+			<p>
+				<select name="sku">
+					<option></option>
+					<?php
+					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
+					{
+						echo '<option>' . $row['sku'] . '</option>';
+					}
+					?>
+				</select>
+			</p>
 			<p class="fittedDiv">Furniture type<br>
 				<select name="type">
 					<option></option>

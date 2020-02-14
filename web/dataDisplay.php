@@ -35,8 +35,7 @@ include 'back.html';
 			WHERE name = \'' . $type . '\' OR sku = \'' . $sku . '\'
 			ORDER BY t.name;';
 		
-		foreach ($db->query($myQuery) as $row)
-		{
+		foreach ($db->query($myQuery) as $row) {
 			echo '<div class="fittedDiv">';
 			echo '<h3>' . $row['name'] . '</h3>';
 			echo '<img src="' . $row['image'] . '">';
