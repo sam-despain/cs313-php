@@ -24,7 +24,7 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<div><a href="dataAccess.php">Back</a></div>
+		<div class="fittedDiv"><a href="dataAccess.php">Back</a></div>
 		<?php
 		$collection = htmlspecialchars($_POST["collection"]);
 		$finish = htmlspecialchars($_POST["finish"]);
@@ -47,7 +47,7 @@ catch (PDOException $ex)
 		
 		foreach ($db->query($myQuery) as $row)
 		{
-			echo '<div class="furnitureItems">';
+			echo '<div class="fittedDiv">';
 			echo '<h3>' . $row['tname'] . '</h3>';
 			echo '<img src="' . $row['link'] . '">';
 			echo '<p>SKU: #' . $row['sku'] . '</p>';

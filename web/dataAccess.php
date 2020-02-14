@@ -24,7 +24,7 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<form action="createFurniture.php" method="post">
+		<form class="fittedDiv" action="createFurniture.php" method="post">
 			<h2>Create New Furniture</h2>
 			<p>Furniture type:
 				<select name="typeInput">
@@ -62,7 +62,7 @@ catch (PDOException $ex)
 			<input type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Create"></p>
 		</form>
-		<form action="dataDisplay.php" method="post">
+		<form class="fittedDiv" action="dataDisplay.php" method="post">
 			<h2>Search for furniture</h2>
 			<p>Furniture type:
 				<select name="type">
@@ -112,7 +112,7 @@ catch (PDOException $ex)
 			ORDER BY t.name;';
 		foreach ($db->query($myQuery) as $row)
 		{
-			echo '<div class="furnitureItems">';
+			echo '<div class="fittedDiv">';
 			echo '<h3>' . $row['tname'] . '</h3>';
 			echo '<img src="' . $row['link'] . '">';
 			echo '<p>SKU: #' . $row['sku'] . '</p>';
