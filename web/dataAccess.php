@@ -24,6 +24,36 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
+		<form class="fittedDiv" action="modifyFurniture.php" method="post">
+			<h2>Modify furniture</h2>
+			<p>SKU #<br>
+				<select name="sku">
+					<?php
+					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
+					{
+						echo '<option>' . $row['sku'] . '</option>';
+					}
+					?>
+				</select>
+			</p>
+			<p>NEW SKU #<br><input type="number" name="skuInput"></p>
+			<p>NEW Furniture type<br>
+				<select name="typeInput">
+					<option></option>
+					<?php
+					foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row)
+					{
+						echo '<option>' . $row['name'] . '</option>';
+					}
+					?>
+				</select>
+			</p>
+			<p>NEW Dimensions<br>
+			<input type="number" name="widthInput" placeholder="Width">
+			<input type="number" name="heightInput" placeholder="Height">
+			<input type="number" name="depthInput" placeholder="Depth"></p>
+			<p><input type="submit" value="Modify"></p>
+		</form>
 		<form class="fittedDiv" action="createFurniture.php" method="post">
 			<h2>Create new furniture</h2>
 			<p>SKU #<br><input type="number" name="skuInput"></p>
@@ -68,32 +98,6 @@ catch (PDOException $ex)
 				</select>
 			</p>
 			<p><input type="submit" value="Search"></p>
-		</form>
-		<form class="fittedDiv" action="modifyFurniture.php" method="post">
-			<h2>Modify furniture</h2>
-			<p>SKU #<br>
-				<select name="sku">
-					<?php
-					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
-					{
-						echo '<option>' . $row['sku'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>NEW SKU #<br><input type="number" name="skuInput"></p>
-			<p>NEW Furniture type<br>
-				<select name="type">
-					<option></option>
-					<?php
-					foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p><input type="submit" value="Modify"></p>
 		</form>
 		<form class="fittedDiv" action="removeFurniture.php" method="post">
 			<h2>Remove furniture</h2>
