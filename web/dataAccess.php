@@ -92,8 +92,8 @@ catch (PDOException $ex)
 			</p>
 			<p>SKU #<br><input type="text" name="skuInput" placeholder="AA0000 or ZAAA-0000"></p>
 			<p>Dimensions<br>
-			<input type="number" name="widthInput" placeholder="Width"><br>
-			<input type="number" name="heightInput" placeholder="Height"><br>
+			<input type="number" name="widthInput" placeholder="Width">
+			<input type="number" name="heightInput" placeholder="Height">
 			<input type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Create"></p>
 		</form>
