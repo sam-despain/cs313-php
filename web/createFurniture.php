@@ -21,7 +21,7 @@ catch (PDOException $ex)
 	echo 'Error!: ' . $ex->getMessage();
 	die();
 }
-//include 'back.html';
+include 'back.html';
 ?>
 <html>
 	<body>
@@ -43,7 +43,7 @@ catch (PDOException $ex)
 		if (($sku != NULL || $sku = ) &&  $width != NULL && $height != NULL && $depth != NULL) {
 			$stmt = $db->prepare($insertQuery);
 			$stmt->bindValue(':type_id', $type_id, PDO::PARAM_INT);
-			$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
+			$stmt->bindValue(':sku', $sku, PDO::PARAM_INT);
 			$stmt->bindValue(':width', $width, PDO::PARAM_STR);
 			$stmt->bindValue(':height', $height, PDO::PARAM_STR);
 			$stmt->bindValue(':depth', $depth, PDO::PARAM_STR);
