@@ -91,7 +91,7 @@ input:focus {
 	outline: 0;
 }
 input[type=number] {
-	width: 36px;
+	width: 100px;
 }
 .radioCheck {
 	height: 25px;
