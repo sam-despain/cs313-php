@@ -32,24 +32,24 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 			$sku = 0;
 		}
 		$newSku = htmlspecialchars($_POST['skuInput']);
-		/*
+		
 		$typeQuery = 'SELECT id, name FROM type WHERE name = \'' . htmlspecialchars($_POST['typeInput']) . '\';';
 		$stmt = $db->prepare($typeQuery);
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$type_id = $typeInput[0]['id'];
-		*/
+		
 		$newWidth = htmlspecialchars($_POST['widthInput']);
 		$newHeight = htmlspecialchars($_POST['heightInput']);
 		$newDepth = htmlspecialchars($_POST['depthInput']);
-		
+		/*
 		$modifyQuery = 'UPDATE furniture SET sku = :newSku WHERE sku = :sku;';
 		if ($newSku != NULL) {
 			$stmt = $db->prepare($modifyQuery);
 			$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
 			$stmt->bindValue(':newSku', $newSku, PDO::PARAM_STR);
 			$stmt->execute();
-		}
+		}*/
 		$modifyQuery = 'UPDATE furniture SET typeid = :type_id WHERE sku = \':sku;\'';
 		if ($sku != NULL) {
 			$stmt = $db->prepare($modifyQuery);
