@@ -77,7 +77,7 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		
 		$modifyQuery .= ' WHERE sku = :sku;';
 		echo $modifyQuery;
-		echo '<br>$sku=' . $sku . '<br>$newSku=' . $newSku . '<br>$type_id=' . $type_id;die();
+		echo '<br>$sku=' . $sku . '<br>$newSku=' . $newSku . '<br>$type_id=' . $type_id;
 		$stmt = $db->prepare($modifyQuery);
 		$stmt->bindValue(':sku', $sku, PDO::PARAM_INT);
 		if ($newSku != NULL) {
@@ -85,6 +85,15 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		}
 		if ($type_id != 0) {
 			$stmt->bindValue(':type_id', $type_id, PDO::PARAM_STR);
+		}
+		if ($newWidth != 0) {
+			$stmt->bindValue(':newWidth', $newWidth, PDO::PARAM_STR);
+		}
+		if ($newHeight != 0) {
+			$stmt->bindValue(':newHeight', $newHeight, PDO::PARAM_STR);
+		}
+		if ($newDepth != 0) {
+			$stmt->bindValue(':newDepth', $newDepth, PDO::PARAM_STR);
 		}
 		$stmt->execute();
 		
