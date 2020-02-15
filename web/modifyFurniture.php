@@ -38,6 +38,9 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$type_id = $typeInput[0]['id'];
+		if ($type_id == NULL) {
+			$type_id = 0;
+		}
 		
 		$newWidth = htmlspecialchars($_POST['widthInput']);
 		$newHeight = htmlspecialchars($_POST['heightInput']);
