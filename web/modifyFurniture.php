@@ -45,7 +45,7 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		
 		$modifyQuery = 'UPDATE furniture SET ';
 		if ($newSku != NULL) {
-			$modifyQuery .= 'sku = :newSku';
+			$modifyQuery .= 'sku = \':newSku\'';
 		}
 		if ($type_id != NULL) {
 			if ($newSku != NULL) {
@@ -60,9 +60,9 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		$stmt->bindValue(':newSku', $newSku, PDO::PARAM_STR);
 		$stmt->bindValue(':type_id', $type_id, PDO::PARAM_STR);
 		$stmt->execute();
-		/*
+		
 		$newPage = "dataAccess.php";
-		header ("Location: $newPage");*/
+		header ("Location: $newPage");
 		die();
 		?>
 	</body>
