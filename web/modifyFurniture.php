@@ -50,12 +50,31 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		if ($newSku != NULL) {
 			$modifyQuery .= 'sku = :newSku';
 		}
-		if ($type_id != NULL) {
+		if ($type_id != 0) {
 			if ($newSku != NULL) {
 				$modifyQuery .= ', ';
 			}
 			$modifyQuery .= 'typeid = :type_id';
 		}
+		if ($newWidth != 0) {
+			if ($newSku != NULL || $type_id != 0) {
+				$modifyQuery .= ', ';
+			}
+			$modifyQuery .= 'width = :newWidth';
+		}
+		if ($newHeight != 0) {
+			if ($newSku != NULL || $type_id != 0 || $newWidth != 0) {
+				$modifyQuery .= ', ';
+			}
+			$modifyQuery .= 'height = :newHeight';
+		}
+		if ($newDepth != 0) {
+			if ($newSku != NULL || $type_id != 0 || $newWidth != 0 || $newHeight != 0) {
+				$modifyQuery .= ', ';
+			}
+			$modifyQuery .= 'depth = :newDepth';
+		}
+		
 		$modifyQuery .= ' WHERE sku = :sku;';
 		echo $modifyQuery;
 		echo '<br>$sku=' . $sku . '<br>$newSku=' . $newSku . '<br>$type_id=' . $type_id;
