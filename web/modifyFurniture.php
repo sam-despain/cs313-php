@@ -43,12 +43,15 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		$newHeight = htmlspecialchars($_POST['heightInput']);
 		$newDepth = htmlspecialchars($_POST['depthInput']);
 		
-		$modifyQuery = 'UPDATE furniture ';
+		$modifyQuery = 'UPDATE furniture SET ';
 		if ($newSku != NULL) {
-			$modifyQuery .= 'SET sku = :newSku';
+			$modifyQuery .= 'sku = :newSku';
 		}
 		if ($type_id != NULL) {
-			$modifyQuery .= ', SET typeid = :type_id';
+			if ($newSku != NULL) {
+				$modifyQuery .= ', ';
+			}
+			$modifyQuery .= 'typeid = :type_id';
 		}
 		$modifyQuery .= ' WHERE sku = :sku;';
 		echo $modifyQuery;
