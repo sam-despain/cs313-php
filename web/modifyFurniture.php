@@ -44,15 +44,15 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		$newDepth = htmlspecialchars($_POST['depthInput']);
 		
 		$modifyQuery = 'UPDATE furniture SET ';
-		/*if ($newSku != NULL) {
+		if ($newSku != NULL) {
 			$modifyQuery .= 'sku = \':newSku\'';
-		}*/
+		}/*
 		if ($type_id != NULL) {
 			if ($newSku != NULL) {
 				$modifyQuery .= ', ';
 			}
 			$modifyQuery .= 'typeid = :type_id';
-		}
+		}*/
 		$modifyQuery .= ' WHERE sku = :sku;';
 		echo $modifyQuery;
 		$stmt = $db->prepare($modifyQuery);
