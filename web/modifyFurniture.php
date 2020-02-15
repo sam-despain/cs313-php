@@ -45,16 +45,17 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		
 		$modifyQuery = 'UPDATE furniture SET ';
 		if ($newSku != NULL) {
-			$modifyQuery .= 'sku = \':newSku\'';
-		}/*
+			$modifyQuery .= 'sku = :newSku';
+		}
 		if ($type_id != NULL) {
 			if ($newSku != NULL) {
 				$modifyQuery .= ', ';
 			}
 			$modifyQuery .= 'typeid = :type_id';
-		}*/
+		}
 		$modifyQuery .= ' WHERE sku = :sku;';
 		echo $modifyQuery;
+		echo $sku . ' ' . $newSku . ' ' . $type_id;
 		$stmt = $db->prepare($modifyQuery);
 		$stmt->bindValue(':sku', $sku, PDO::PARAM_INT);
 		$stmt->bindValue(':newSku', $newSku, PDO::PARAM_STR);
