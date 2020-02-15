@@ -52,7 +52,7 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		}
 		echo $type_id;
 		$modifyQuery = 'UPDATE furniture SET typeid = :type_id WHERE sku = \':sku;\'';
-		if ($sku != NULL) {
+		if ($type_id != NULL) {
 			$stmt = $db->prepare($modifyQuery);
 			$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
 			$stmt->bindValue(':type_id', $type_id, PDO::PARAM_STR);
