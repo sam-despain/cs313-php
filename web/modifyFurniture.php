@@ -50,14 +50,14 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 			$stmt->bindValue(':newSku', $newSku, PDO::PARAM_STR);
 			$stmt->execute();
 		}
-		echo $type_id;/*
+		echo $type_id;
 		$modifyQuery = 'UPDATE furniture SET typeid = :type_id WHERE sku = \':sku;\'';
 		if ($sku != NULL) {
 			$stmt = $db->prepare($modifyQuery);
 			$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
 			$stmt->bindValue(':type_id', $type_id, PDO::PARAM_STR);
 			$stmt->execute();
-		}*/
+		}
 		$newPage = "dataAccess.php";
 		header ("Location: $newPage");
 		die();
