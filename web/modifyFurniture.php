@@ -32,13 +32,13 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 			$sku = 0;
 		}
 		$newSku = htmlspecialchars($_POST['skuInput']);
-		
+		/*
 		$typeQuery = 'SELECT id, name FROM type WHERE name = \'' . htmlspecialchars($_POST['typeInput']) . '\';';
 		$stmt = $db->prepare($typeQuery);
 		$stmt->execute();
 		$typeInput = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$type_id = $typeInput[0]['id'];
-		
+		*/
 		$newWidth = htmlspecialchars($_POST['widthInput']);
 		$newHeight = htmlspecialchars($_POST['heightInput']);
 		$newDepth = htmlspecialchars($_POST['depthInput']);
