@@ -61,9 +61,13 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		echo '<br>$sku=' . $sku . '<br>$newSku=' . $newSku . '<br>$type_id=' . $type_id;
 		$stmt = $db->prepare($modifyQuery);
 		$stmt->bindValue(':sku', $sku, PDO::PARAM_INT);
-		$stmt->bindValue(':newSku', $newSku, PDO::PARAM_STR);
-		$stmt->bindValue(':type_id', $type_id, PDO::PARAM_STR);
-		//$stmt->execute();
+		if ($newSku != NULL) {
+			$stmt->bindValue(':newSku', $newSku, PDO::PARAM_STR);
+		}
+		if ($type_id != 0) {
+			$stmt->bindValue(':type_id', $type_id, PDO::PARAM_STR);
+		}
+		$stmt->execute();
 		
 		$newPage = "dataAccess.php";
 		header ("Location: $newPage");
