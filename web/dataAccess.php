@@ -26,38 +26,6 @@ catch (PDOException $ex)
 	<body>
 		<h1>FurnitureZone</h1>
 		<div class="fittedDiv">
-			<button class="dropButton"><h3>Modify furniture</h3></button>
-			<form class="contents" action="modifyFurniture.php" method="post">
-				<p>SKU #<br>
-					<select name="sku">
-						<?php
-						foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
-						{
-							echo '<option>' . $row['sku'] . '</option>';
-						}
-						?>
-					</select>
-				</p>
-				<p>NEW SKU #<br><input type="number" name="skuInput"></p>
-				<p>NEW Furniture type<br>
-					<select name="typeInput">
-						<option></option>
-						<?php
-						foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row)
-						{
-							echo '<option>' . $row['name'] . '</option>';
-						}
-						?>
-					</select>
-				</p>
-				<p>NEW Dimensions<br>
-				<input type="number" name="widthInput" placeholder="Width">
-				<input type="number" name="heightInput" placeholder="Height">
-				<input type="number" name="depthInput" placeholder="Depth"></p>
-				<p><input type="submit" value="Modify"></p>
-			</form>
-		</div>
-		<div class="fittedDiv">
 			<button class="dropButton"><h3>Create new furniture</h3></button>
 			<form class="contents" action="createFurniture.php" method="post">
 				<p>SKU #<br><input type="number" name="skuInput"></p>
@@ -130,8 +98,8 @@ catch (PDOException $ex)
 			echo '</select>';
 			echo '</p>';
 			echo '<p>NEW Dimensions<br>';
-			echo '<input type="number" name="widthInput" placeholder="Width">';
-			echo '<input type="number" name="heightInput" placeholder="Height">';
+			echo '<input type="number" name="widthInput" placeholder="Width"><br>';
+			echo '<input type="number" name="heightInput" placeholder="Height"><br>';
 			echo '<input type="number" name="depthInput" placeholder="Depth"></p>';
 			echo '<p><input type="submit" value="Modify"></p>';
 			echo '</form>';
