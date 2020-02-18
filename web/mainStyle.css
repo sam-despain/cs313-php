@@ -50,7 +50,7 @@ a {
 button {
 	border: none;
 	padding: 10px;
-	border-radius: 100px;
+	border-radius: 5px;
 	margin: 5px;
 	cursor: pointer;
 	font-size: 24px;

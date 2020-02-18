@@ -25,7 +25,7 @@ catch (PDOException $ex)
 <html>
 	<body>
 		<div class="fittedDiv">
-			<button class="dropButton"><h2>Modify furniture</h2></button>
+			<button class="dropButton"><h3>Modify furniture</h3></button>
 			<form class="contents" action="modifyFurniture.php" method="post">
 				<p>SKU #<br>
 					<select name="sku">
@@ -57,7 +57,7 @@ catch (PDOException $ex)
 			</form>
 		</div>
 		<div class="fittedDiv">
-			<button class="dropButton"><h2>Create new furniture</h2></button>
+			<button class="dropButton"><h3>Create new furniture</h3></button>
 			<form class="contents" action="createFurniture.php" method="post">
 				<p>SKU #<br><input type="number" name="skuInput"></p>
 				<p class="fittedDiv" style="padding-right: 20px;">Furniture type<br>
@@ -78,7 +78,7 @@ catch (PDOException $ex)
 			</form>
 		</div>
 		<div class="fittedDiv">
-			<button class="dropButton"><h2>Search for furniture</h2></button>
+			<button class="dropButton"><h3>Search for furniture</h3></button>
 			<form class="contents" action="dataDisplay.php" method="post">
 				<p>SKU #<br>
 					<select name="sku">
@@ -106,7 +106,7 @@ catch (PDOException $ex)
 			</form>
 		</div>
 		<div class="fittedDiv">
-			<button class="dropButton"><h2>Remove furniture</h2></button>
+			<button class="dropButton"><h3>Remove furniture</h3></button>
 			<form class="contents" action="removeFurniture.php" method="post">
 				<p>SKU #<br>
 					<select name="sku">
