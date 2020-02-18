@@ -124,6 +124,7 @@ catch (PDOException $ex)
 			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
 			echo '<p><input type="submit" value="Remove"></p>';
 			echo '</form>';
+			echo '<button class="dropButton">Edit</button>';
 			echo '<form class="contents" action="modifyFurniture.php" method="post">';
 			echo '<p>SKU #<br>';
 			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
