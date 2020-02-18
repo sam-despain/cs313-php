@@ -40,8 +40,8 @@ catch (PDOException $ex)
 					</select>
 				</p>
 				<p>Dimensions<br>
-				<input type="number" name="widthInput" placeholder="Width">
-				<input type="number" name="heightInput" placeholder="Height">
+				<input type="number" name="widthInput" placeholder="Width"><br>
+				<input type="number" name="heightInput" placeholder="Height"><br>
 				<input type="number" name="depthInput" placeholder="Depth"></p>
 				<p><input type="submit" value="Create"></p>
 			</form>
@@ -83,7 +83,7 @@ catch (PDOException $ex)
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div class="fittedDiv">';
-			echo '<button class="dropButton">Edit</button>';
+			echo '<button class="dropButton" style="margin-left: auto">Edit</button>';
 			echo '<form class="contents" action="modifyFurniture.php" method="post">';
 			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
 			echo '<p>NEW SKU #<br><input type="number" name="skuInput"></p>';
