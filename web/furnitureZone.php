@@ -31,7 +31,6 @@ catch (PDOException $ex)
 		<div class="fittedDiv">
 			<button class="dropButton"><h3>Create new furniture</h3></button>
 			<form class="contents" action="createFurniture.php" method="post">
-				<p>SKU #<br><input type="number" name="skuInput"></p>
 				<p class="fittedDiv" style="padding-right: 20px;">Furniture type<br>
 					<select name="typeInput">
 						<?php
@@ -42,6 +41,7 @@ catch (PDOException $ex)
 						?>
 					</select>
 				</p>
+				<p>SKU #<br><input type="number" name="skuInput"></p>
 				<p>Dimensions<br>
 				<input type="number" name="widthInput" placeholder="Width"><br>
 				<input type="number" name="heightInput" placeholder="Height"><br>
@@ -93,7 +93,6 @@ catch (PDOException $ex)
 			echo '<button class="dropButton">Edit</button>';
 			echo '<form class="contents" action="modifyFurniture.php" method="post">';
 			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
-			echo '<p>NEW SKU #<br><input type="number" name="skuInput"></p>';
 			echo '<p>NEW Furniture type<br>';
 			echo '<select name="typeInput">';
 			echo '<option></option>';
@@ -102,6 +101,7 @@ catch (PDOException $ex)
 			};
 			echo '</select>';
 			echo '</p>';
+			echo '<p>NEW SKU #<br><input type="number" name="skuInput"></p>';
 			echo '<p>NEW Dimensions<br>';
 			echo '<input type="number" name="widthInput" placeholder="Width"><br>';
 			echo '<input type="number" name="heightInput" placeholder="Height"><br>';
