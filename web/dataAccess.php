@@ -105,9 +105,9 @@ catch (PDOException $ex)
 			echo '<input type="number" name="widthInput" placeholder="Width"><br>';
 			echo '<input type="number" name="heightInput" placeholder="Height"><br>';
 			echo '<input type="number" name="depthInput" placeholder="Depth"></p>';
-			echo '<p><input type="submit" value="Modify"></p>';
+			echo '<p><input type="submit" value="Save changes"></p>';
 			echo '</form>';
-			echo '<button class="dropButton">X</button>';
+			echo '<button class="dropButton">Remove</button>';
 			echo '<form class="contents" action="removeFurniture.php" method="post">';
 			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
 			echo '<p><input type="submit" value="Remove"></p>';
