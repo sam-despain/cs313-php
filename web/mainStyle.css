@@ -23,7 +23,7 @@ a {
 	padding: 0px;
 	overflow: hidden;
 	border-radius: 100px;
-	background-color: #eee;
+	background-color: #fff;
 }
 #hd {
 	float: left;
@@ -50,6 +50,9 @@ a {
 }
 button {
 	border: none;
+	padding: 10px;
+	border-radius: 100px;
+	margin: 5px;
 	cursor: pointer;
 	font-size: 24px;
 	outline: none;
