@@ -73,6 +73,9 @@ p {
 	margin-left: 100px;
 	margin-right: 100px;
 }
+h3 {
+	margin: 5px 15px;
+}
 div {
 	background-color: #fff;
 	border: none;
