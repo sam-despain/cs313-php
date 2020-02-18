@@ -58,7 +58,7 @@ catch (PDOException $ex)
 		</div>
 		<div class="fittedDiv">
 			<button class="dropButton"><h2>Create new furniture</h2></button>
-			<form class="fittedDiv" action="createFurniture.php" method="post">
+			<form class="contents" action="createFurniture.php" method="post">
 				<p>SKU #<br><input type="number" name="skuInput"></p>
 				<p class="fittedDiv" style="padding-right: 20px;">Furniture type<br>
 					<select name="typeInput">
