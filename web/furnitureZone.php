@@ -51,7 +51,7 @@ catch (PDOException $ex)
 		</div>
 		<div class="fittedDiv">
 			<button class="dropButton"><h3>Search for furniture</h3></button>
-			<form class="contents" action="dataDisplay.php" method="post">
+			<form class="contents" action="displayFurniture.php" method="post">
 				<p>SKU #<br>
 					<select name="sku">
 						<option></option>
@@ -96,6 +96,7 @@ catch (PDOException $ex)
 			echo '<p>NEW SKU #<br><input type="number" name="skuInput"></p>';
 			echo '<p>NEW Furniture type<br>';
 			echo '<select name="typeInput">';
+			echo '<option></option>';
 			foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row){
 				echo '<option>' . $row['name'] . '</option>';
 			};

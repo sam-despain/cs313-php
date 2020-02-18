@@ -50,6 +50,7 @@ include 'back.html';
 			echo '<p>NEW SKU #<br><input type="number" name="skuInput"></p>';
 			echo '<p>NEW Furniture type<br>';
 			echo '<select name="typeInput">';
+			echo '<option></option>';
 			foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row){
 				echo '<option>' . $row['name'] . '</option>';
 			};
@@ -69,6 +70,6 @@ include 'back.html';
 			echo '</div>';
 		}
 		?>
-		
+		<script src="home.js"></script>
 	</body>
 </html>
