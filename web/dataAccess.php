@@ -24,38 +24,38 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<form class="fittedDiv, contents" action="modifyFurniture.php" method="post">
+		<div class="fittedDiv" action="modifyFurniture.php" method="post">
 			<button class="dropButton">Modify furniture</button>
-			
-			<p>SKU #<br>
-				<select name="sku">
-					<?php
-					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
-					{
-						echo '<option>' . $row['sku'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>NEW SKU #<br><input type="number" name="skuInput"></p>
-			<p>NEW Furniture type<br>
-				<select name="typeInput">
-					<option></option>
-					<?php
-					foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>NEW Dimensions<br>
-			<input type="number" name="widthInput" placeholder="Width">
-			<input type="number" name="heightInput" placeholder="Height">
-			<input type="number" name="depthInput" placeholder="Depth"></p>
-			<p><input type="submit" value="Modify"></p>
-			
-		</form>
+			<form class="contents">
+				<p>SKU #<br>
+					<select name="sku">
+						<?php
+						foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
+						{
+							echo '<option>' . $row['sku'] . '</option>';
+						}
+						?>
+					</select>
+				</p>
+				<p>NEW SKU #<br><input type="number" name="skuInput"></p>
+				<p>NEW Furniture type<br>
+					<select name="typeInput">
+						<option></option>
+						<?php
+						foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row)
+						{
+							echo '<option>' . $row['name'] . '</option>';
+						}
+						?>
+					</select>
+				</p>
+				<p>NEW Dimensions<br>
+				<input type="number" name="widthInput" placeholder="Width">
+				<input type="number" name="heightInput" placeholder="Height">
+				<input type="number" name="depthInput" placeholder="Depth"></p>
+				<p><input type="submit" value="Modify"></p>
+			</form>
+		</div>
 		<form class="fittedDiv" action="createFurniture.php" method="post">
 			<h2>Create new furniture</h2>
 			<p>SKU #<br><input type="number" name="skuInput"></p>
