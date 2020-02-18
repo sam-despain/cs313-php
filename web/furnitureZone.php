@@ -101,7 +101,6 @@ catch (PDOException $ex)
 			};
 			echo '</select>';
 			echo '</p>';
-			echo '<p>NEW SKU #<br><input type="number" name="skuInput"></p>';
 			echo '<p>NEW Dimensions<br>';
 			echo '<input type="number" name="widthInput" placeholder="Width"><br>';
 			echo '<input type="number" name="heightInput" placeholder="Height"><br>';

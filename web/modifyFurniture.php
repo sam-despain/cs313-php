@@ -68,12 +68,6 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 			}
 			$modifyQuery .= 'height = :newHeight';
 		}
-		if ($newDepth != 0) {
-			if ($newSku != NULL || $type_id != 0 || $newWidth != 0 || $newHeight != 0) {
-				$modifyQuery .= ', ';
-			}
-			$modifyQuery .= 'depth = :newDepth';
-		}
 		
 		$modifyQuery .= ' WHERE sku = :sku;';
 		$stmt = $db->prepare($modifyQuery);
