@@ -94,7 +94,7 @@ catch (PDOException $ex)
 			echo '<p>NEW Furniture type<br>';
 			echo '<select name="typeInput">';
 			foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row){
-				echo '<option>\' . $row[\'name\'] . \'</option>';
+				echo '<option>' . $row['name'] . '</option>';
 			};
 			echo '</select>';
 			echo '</p>';
