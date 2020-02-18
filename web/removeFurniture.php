@@ -34,7 +34,7 @@ include 'back.html';
 			$stmt->bindValue(':sku', $sku, PDO::PARAM_STR);
 			$stmt->execute();
 		}
-		$newPage = "dataAccess.php";
+		$newPage = "furnitureZone.php";
 		header ("Location: $newPage");
 		die();
 		?>

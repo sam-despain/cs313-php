@@ -95,7 +95,7 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 		}
 		$stmt->execute();
 		
-		$newPage = "dataAccess.php";
+		$newPage = "furnitureZone.php";
 		header ("Location: $newPage");
 		die();
 		?>

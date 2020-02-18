@@ -23,6 +23,9 @@ catch (PDOException $ex)
 }
 ?>
 <html>
+	<head>
+		
+	</head>
 	<body>
 		<h1>FurnitureZone</h1>
 		<div class="fittedDiv">

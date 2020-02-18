@@ -50,7 +50,7 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 			$stmt->bindValue(':depth', $depth, PDO::PARAM_STR);
 			$stmt->execute();
 		}
-		$newPage = "dataAccess.php";
+		$newPage = "furnitureZone.php";
 		header ("Location: $newPage");
 		die();
 		echo "All's good?";
