@@ -58,7 +58,7 @@ button {
 }
 .contents {
 	margin: auto;
-	width: 50%;
+	width: 75%;
 	max-height: 0;
 	overflow: hidden;
 	transition: 1s;
