@@ -24,8 +24,8 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<form class="fittedDiv, dropdown" action="modifyFurniture.php" method="post">
-			<h2>Modify furniture</h2>
+		<form class="fittedDiv" action="modifyFurniture.php" method="post">
+			<button class="dropButton">Modify furniture</button>
 			<div class="contents">
 			<p>SKU #<br>
 				<select name="sku">
