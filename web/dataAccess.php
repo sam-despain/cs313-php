@@ -24,9 +24,9 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<form class="fittedDiv" action="modifyFurniture.php" method="post">
+		<form class="fittedDiv, contents" action="modifyFurniture.php" method="post">
 			<button class="dropButton">Modify furniture</button>
-			<div class="contents">
+			
 			<p>SKU #<br>
 				<select name="sku">
 					<?php
@@ -54,9 +54,9 @@ catch (PDOException $ex)
 			<input type="number" name="heightInput" placeholder="Height">
 			<input type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Modify"></p>
-			</div>
+			
 		</form>
-		<form class="fittedDiv, dropdown" action="createFurniture.php" method="post">
+		<form class="fittedDiv" action="createFurniture.php" method="post">
 			<h2>Create new furniture</h2>
 			<p>SKU #<br><input type="number" name="skuInput"></p>
 			<p class="fittedDiv" style="padding-right: 20px;">Furniture type<br>
