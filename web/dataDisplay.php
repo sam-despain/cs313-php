@@ -40,10 +40,32 @@ include 'back.html';
 		
 		foreach ($db->query($myQuery) as $row) {
 			echo '<div class="fittedDiv">';
-			echo '<h3>' . $row['name'] . '</h3>';
+			echo '<h3 style="text-align: center">' . $row['name'] . '</h3>';
 			echo '<img src="' . $row['image'] . '">';
 			echo '<p>SKU: #' . $row['sku'] . '</p>';
 			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
+			echo '<button class="dropButton">Edit</button>';
+			echo '<form class="contents" action="modifyFurniture.php" method="post">';
+			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
+			echo '<p>NEW SKU #<br><input type="number" name="skuInput"></p>';
+			echo '<p>NEW Furniture type<br>';
+			echo '<select name="typeInput">';
+			foreach ($db->query('SELECT name FROM type ORDER BY name;') as $row){
+				echo '<option>' . $row['name'] . '</option>';
+			};
+			echo '</select>';
+			echo '</p>';
+			echo '<p>NEW Dimensions<br>';
+			echo '<input type="number" name="widthInput" placeholder="Width"><br>';
+			echo '<input type="number" name="heightInput" placeholder="Height"><br>';
+			echo '<input type="number" name="depthInput" placeholder="Depth"></p>';
+			echo '<p><input type="submit" value="Save"></p>';
+			echo '</form>';
+			echo '<button class="dropButton">Remove</button>';
+			echo '<form class="contents" action="removeFurniture.php" method="post">';
+			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
+			echo '<p><input type="submit" value="CONFIRM"></p>';
+			echo '</form>';
 			echo '</div>';
 		}
 		?>
