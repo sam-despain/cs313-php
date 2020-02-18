@@ -70,8 +70,8 @@ p {
 }
 .dropdown {
 	text-align: center;
-	margin: auto;
-    display: inline-block;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 div {
 	background-color: #fff;
