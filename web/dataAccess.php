@@ -53,7 +53,7 @@ catch (PDOException $ex)
 				<input type="number" name="widthInput" placeholder="Width">
 				<input type="number" name="heightInput" placeholder="Height">
 				<input type="number" name="depthInput" placeholder="Depth"></p>
-				<p><h3><input type="submit" value="Modify"></h3></p>
+				<p><input type="submit" value="Modify"></p>
 			</form>
 		</div>
 		<div class="fittedDiv">
@@ -74,7 +74,7 @@ catch (PDOException $ex)
 				<input type="number" name="widthInput" placeholder="Width">
 				<input type="number" name="heightInput" placeholder="Height">
 				<input type="number" name="depthInput" placeholder="Depth"></p>
-				<p><h3><input type="submit" value="Create"></h3></p>
+				<p><input type="submit" value="Create"></p>
 			</form>
 		</div>
 		<div class="fittedDiv">
@@ -102,7 +102,7 @@ catch (PDOException $ex)
 						?>
 					</select>
 				</p>
-				<p><h3><input type="submit" value="Search"></h3></p>
+				<p><input type="submit" value="Search"></p>
 			</form>
 		</div>
 		<div class="fittedDiv">
@@ -118,7 +118,7 @@ catch (PDOException $ex)
 						?>
 					</select>
 				</p>
-				<p><h3><input type="submit" value="Remove"></h3></p>
+				<p><input type="submit" value="Remove"></p>
 			</form>
 		</div>
 		<br>
