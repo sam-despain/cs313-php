@@ -83,6 +83,11 @@ catch (PDOException $ex)
 		foreach ($db->query($myQuery) as $row)
 		{
 			echo '<div class="fittedDiv">';
+			echo '<button class="dropButton">X</button>';
+			echo '<form class="contents" action="removeFurniture.php" method="post">';
+			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
+			echo '<p><input type="submit" value="Remove"></p>';
+			echo '</form>';
 			echo '<button class="dropButton" style="margin-left: auto">Edit</button>';
 			echo '<form class="contents" action="modifyFurniture.php" method="post">';
 			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
@@ -107,11 +112,6 @@ catch (PDOException $ex)
 			echo '<img src="' . $row['image'] . '">';
 			echo '<p>SKU: #' . $row['sku'] . '</p>';
 			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
-			echo '<button class="dropButton">X</button>';
-			echo '<form class="contents" action="removeFurniture.php" method="post">';
-			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
-			echo '<p><input type="submit" value="Remove"></p>';
-			echo '</form>';
 			echo '</div>';
 		}
 		?>
