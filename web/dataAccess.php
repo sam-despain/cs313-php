@@ -117,7 +117,6 @@ catch (PDOException $ex)
 			echo '<div class="fittedDiv">';
 			echo '<button class="dropButton">Edit</button>';
 			echo '<form class="contents" action="modifyFurniture.php" method="post">';
-			echo '<p>SKU #<br>';
 			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
 			echo '<p>NEW SKU #<br><input type="number" name="skuInput"></p>';
 			echo '<p>NEW Furniture type<br>';
