@@ -93,7 +93,7 @@ input {
 	cursor: pointer;
 	font-size: 24px;
 	padding: 10px;
-	background-color: #ddd;
+	background-color: #aaa;
 	border-radius: 5px;
 }
 input:focus {
