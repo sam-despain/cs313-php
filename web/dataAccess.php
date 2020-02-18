@@ -110,7 +110,7 @@ catch (PDOException $ex)
 			echo '<button class="dropButton">Remove</button>';
 			echo '<form class="contents" action="removeFurniture.php" method="post">';
 			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
-			echo '<p><input type="submit" value="Remove"></p>';
+			echo '<p><input type="submit" value="Confirm remove"></p>';
 			echo '</form>';
 			echo '</div>';
 		}
