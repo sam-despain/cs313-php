@@ -106,22 +106,6 @@ catch (PDOException $ex)
 				<p><input type="submit" value="Search"></p>
 			</form>
 		</div>
-		<div class="fittedDiv">
-			<button class="dropButton"><h3>Remove furniture</h3></button>
-			<form class="contents" action="removeFurniture.php" method="post">
-				<p>SKU #<br>
-					<select name="sku">
-						<?php
-						foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
-						{
-							echo '<option>' . $row['sku'] . '</option>';
-						}
-						?>
-					</select>
-				</p>
-				<p><input type="submit" value="Remove"></p>
-			</form>
-		</div>
 		<br>
 		<?php
 		$myQuery = 'SELECT t.name, t.image, f.sku, f.width, f.height, f.depth
@@ -134,12 +118,12 @@ catch (PDOException $ex)
 			echo '<h3>' . $row['name'] . '</h3>';
 			echo '<img src="' . $row['image'] . '">';
 			echo '<p>SKU: #' . $row['sku'] . '</p>';
-			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
-			echo '<button class="dropButton">X</button>';
 			echo '<form class="contents" action="removeFurniture.php" method="post">';
 			echo '<input type="hidden" name="sku" value="' . $row['sku'] . '">';
 			echo '<p><input type="submit" value="Remove"></p>';
 			echo '</form>';
+			echo '<p>Dimensions: ' . $row['width'] . ' x ' . $row['height'] . ' x ' . $row['depth'] . '</p>';
+			echo '<button class="dropButton">X</button>';
 			echo '</div>';
 		}
 		?>
