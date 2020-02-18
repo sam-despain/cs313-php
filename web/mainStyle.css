@@ -70,8 +70,7 @@ p {
 }
 .dropdown {
 	text-align: center;
-	display: inline-block;
-	justify-content: center;
+	width: 75%;
 }
 div {
 	background-color: #fff;
