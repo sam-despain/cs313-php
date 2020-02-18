@@ -78,7 +78,7 @@ div {
 	border: none;
 	border-radius: 25px;
 	margin: 5px;
-	padding: 25px;
+	padding: 20px 5px;
 }
 .fittedDiv {
     display: inline-block;
