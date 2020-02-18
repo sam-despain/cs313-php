@@ -92,12 +92,14 @@ input {
 	cursor: pointer;
 	font-size: 24px;
 	padding: 10px;
-	color: white;
-	background-color: #a55;
 	border-radius: 5px;
 }
 input:focus {
 	outline: 0;
+}
+input[type=submit] {
+	background-color: #a55;
+	color: white;
 }
 input[type=number] {
 	width: 110px;
