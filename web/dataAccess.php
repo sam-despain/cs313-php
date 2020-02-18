@@ -26,6 +26,7 @@ catch (PDOException $ex)
 	<body>
 		<form class="fittedDiv, dropdown" action="modifyFurniture.php" method="post">
 			<h2>Modify furniture</h2>
+			<div class="contents">
 			<p>SKU #<br>
 				<select name="sku">
 					<?php
@@ -53,6 +54,7 @@ catch (PDOException $ex)
 			<input type="number" name="heightInput" placeholder="Height">
 			<input type="number" name="depthInput" placeholder="Depth"></p>
 			<p><input type="submit" value="Modify"></p>
+			</div>
 		</form>
 		<form class="fittedDiv, dropdown" action="createFurniture.php" method="post">
 			<h2>Create new furniture</h2>
