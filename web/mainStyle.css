@@ -1,5 +1,6 @@
 body {
 	font-family: helvetica;
+	background-color: #eee;
 }
 form {
 	margin: 10px;
@@ -68,7 +69,7 @@ p {
 	text-align: center;
 }
 div {
-	background-color: #eee;
+	background-color: #fff;
 	border: none;
 	border-radius: 25px;
 	margin: 5px;
