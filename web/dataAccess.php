@@ -24,9 +24,9 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
-		<div class="fittedDiv" action="modifyFurniture.php" method="post">
-			<button class="dropButton">Modify furniture</button>
-			<form class="contents">
+		<div class="fittedDiv">
+			<button class="dropButton"><h2>Modify furniture</h2></button>
+			<form class="contents" action="modifyFurniture.php" method="post">
 				<p>SKU #<br>
 					<select name="sku">
 						<?php
@@ -56,65 +56,71 @@ catch (PDOException $ex)
 				<p><input type="submit" value="Modify"></p>
 			</form>
 		</div>
-		<form class="fittedDiv" action="createFurniture.php" method="post">
-			<h2>Create new furniture</h2>
-			<p>SKU #<br><input type="number" name="skuInput"></p>
-			<p class="fittedDiv" style="padding-right: 20px;">Furniture type<br>
-				<select name="typeInput">
-					<?php
-					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>Dimensions<br>
-			<input type="number" name="widthInput" placeholder="Width">
-			<input type="number" name="heightInput" placeholder="Height">
-			<input type="number" name="depthInput" placeholder="Depth"></p>
-			<p><input type="submit" value="Create"></p>
-		</form>
-		<form class="fittedDiv" action="dataDisplay.php" method="post">
-			<h2>Search for furniture</h2>
-			<p>SKU #<br>
-				<select name="sku">
-					<option></option>
-					<?php
-					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
-					{
-						echo '<option>' . $row['sku'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p>Furniture type<br>
-				<select name="type">
-					<option></option>
-					<?php
-					foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
-					{
-						echo '<option>' . $row['name'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p><input type="submit" value="Search"></p>
-		</form>
-		<form class="fittedDiv" action="removeFurniture.php" method="post">
-			<h2>Remove furniture</h2>
-			<p>SKU #<br>
-				<select name="sku">
-					<?php
-					foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
-					{
-						echo '<option>' . $row['sku'] . '</option>';
-					}
-					?>
-				</select>
-			</p>
-			<p><input type="submit" value="Remove"></p>
-		</form>
+		<div class="fittedDiv">
+			<button class="dropButton"><h2>Create new furniture</h2></button>
+			<form class="fittedDiv" action="createFurniture.php" method="post">
+				<p>SKU #<br><input type="number" name="skuInput"></p>
+				<p class="fittedDiv" style="padding-right: 20px;">Furniture type<br>
+					<select name="typeInput">
+						<?php
+						foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
+						{
+							echo '<option>' . $row['name'] . '</option>';
+						}
+						?>
+					</select>
+				</p>
+				<p>Dimensions<br>
+				<input type="number" name="widthInput" placeholder="Width">
+				<input type="number" name="heightInput" placeholder="Height">
+				<input type="number" name="depthInput" placeholder="Depth"></p>
+				<p><input type="submit" value="Create"></p>
+			</form>
+		</div>
+		<div class="fittedDiv">
+			<button class="dropButton"><h2>Search for furniture</h2></button>
+			<form class="contents" action="dataDisplay.php" method="post">
+				<p>SKU #<br>
+					<select name="sku">
+						<option></option>
+						<?php
+						foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
+						{
+							echo '<option>' . $row['sku'] . '</option>';
+						}
+						?>
+					</select>
+				</p>
+				<p>Furniture type<br>
+					<select name="type">
+						<option></option>
+						<?php
+						foreach ($db->query('SELECT * FROM type ORDER BY type.name;') as $row)
+						{
+							echo '<option>' . $row['name'] . '</option>';
+						}
+						?>
+					</select>
+				</p>
+				<p><input type="submit" value="Search"></p>
+			</form>
+		</div>
+		<div class="fittedDiv">
+			<button class="dropButton"><h2>Remove furniture</h2></button>
+			<form class="contents" action="removeFurniture.php" method="post">
+				<p>SKU #<br>
+					<select name="sku">
+						<?php
+						foreach ($db->query('SELECT sku FROM furniture ORDER BY sku;') as $row)
+						{
+							echo '<option>' . $row['sku'] . '</option>';
+						}
+						?>
+					</select>
+				</p>
+				<p><input type="submit" value="Remove"></p>
+			</form>
+		</div>
 		<br>
 		<?php
 		$myQuery = 'SELECT t.name, t.image, f.sku, f.width, f.height, f.depth
