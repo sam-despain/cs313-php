@@ -64,7 +64,7 @@ include 'back.html';
 			echo '<button class="dropButton">Remove</button>';
 			echo '<form class="contents" action="removeFurniture.php" method="post">';
 			echo '<p><input type="hidden" name="sku" value="' . $row['sku'] . '"></p>';
-			echo '<p><input type="submit" value="CONFIRM"></p>';
+			echo '<p><input type="submit" value="CONFIRM REMOVE"></p>';
 			echo '</form>';
 			echo '</div>';
 		}
