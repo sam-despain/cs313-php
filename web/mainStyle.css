@@ -4,7 +4,7 @@ body {
 }
 form {
 	margin: 10px;
-	padding: 10px;
+	padding: 1px;
 	border-radius: 10px;
 }
 .logo {
@@ -79,7 +79,7 @@ h3 {
 div {
 	background-color: #fff;
 	border: none;
-	border-radius: 25px;
+	border-radius: 5px;
 	margin: 5px;
 	padding: 5px 15px;
 }
