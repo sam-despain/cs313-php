@@ -24,6 +24,7 @@ catch (PDOException $ex)
 ?>
 <html>
 	<body>
+		<h1>FurnitureZone</h1>
 		<div class="fittedDiv">
 			<button class="dropButton"><h3>Modify furniture</h3></button>
 			<form class="contents" action="modifyFurniture.php" method="post">
