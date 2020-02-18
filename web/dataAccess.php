@@ -129,5 +129,6 @@ catch (PDOException $ex)
 			echo '</div>';
 		}
 		?>
+		<script src="home.js"></script>
 	</body>
 </html>
