@@ -89,7 +89,6 @@ input {
 	border: none;
 	margin: 10px;
 	cursor: pointer;
-	padding: 10px;
 	border-radius: 5px;
 }
 input:focus {
