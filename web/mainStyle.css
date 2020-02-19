@@ -105,8 +105,10 @@ input[type=number] {
 	text-align: center;
 	background-color: #eee;
 }
-input[type=text] {
+input[type=text, password] {
 	background-color: #eee;
+	border-color: #aaa;
+	border-width: 1px;
 }
 .radioCheck {
 	height: 25px;
