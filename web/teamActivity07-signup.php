@@ -21,9 +21,11 @@ catch (PDOException $ex)
 	echo 'Error!: ' . $ex->getMessage();
 	die();
 }
-include 'back.html';
 ?>
 <html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="mainStyle.css"/>
+	</head>
 	<body>
 		<form>
 			<input type="text" name="username" placeholder="Username">
