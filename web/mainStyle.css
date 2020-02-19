@@ -107,6 +107,7 @@ input[type=number] {
 }
 input[type=text], [type=password] {
 	background-color: #eee;
+	border: visible;
 	border-color: #aaa;
 	border-width: 1px;
 }
