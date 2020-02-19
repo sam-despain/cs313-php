@@ -23,14 +23,9 @@ catch (PDOException $ex)
 }
 ?>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="mainStyle.css"/>
-	</head>
 	<body>
-		<form action="teamActivity07-storeAccount.php" method="post">
-			<input type="text" name="username" placeholder="Username">
-			<input type="password" name="password" placeholder="Password">
-			<input type="password" name="pwrepeat" placeholder="Repeat Password">
-		</form>
+		<?php
+		
+		?>
 	</body>
 </html>

@@ -103,10 +103,13 @@ input[type=submit] {
 input[type=number] {
 	width: 110px;
 	text-align: center;
-	background-color: #eee;
+	background-color: #fff;
+	border-style: solid;
+	border-color: #aaa;
+	border-width: 1px;
 }
 input[type=text], [type=password] {
-	background-color: #eee;
+	background-color: #fff;
 	border-style: solid;
 	border-color: #aaa;
 	border-width: 1px;
