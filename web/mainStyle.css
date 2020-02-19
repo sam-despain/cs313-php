@@ -87,7 +87,6 @@ div {
 
 input {
 	border: none;
-	margin: 10px;
 	cursor: pointer;
 	border-radius: 5px;
 }
@@ -97,6 +96,7 @@ input:focus {
 input[type=submit] {
 	background-color: #a55;
 	color: white;
+	padding: 10px;
 }
 input[type=number] {
 	width: 110px;
