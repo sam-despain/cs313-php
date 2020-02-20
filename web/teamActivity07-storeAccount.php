@@ -30,6 +30,7 @@ catch (PDOException $ex)
 		$password = '';
 		if ($_POST["password"] == $_POST["pwrepeat"]) {
 			$password = password_hash(htmlspecialchars($_POST["password"]));
+			echo "<p>Password validated</p>";
 		} else {
 			header("Location: $newPage");
 			die();
