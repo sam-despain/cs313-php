@@ -29,7 +29,7 @@ catch (PDOException $ex)
 		$username = htmlspecialchars($_POST["username"]);
 		$password = '';
 		if ($_POST["password"] == $_POST["pwrepeat"]) {
-			$password = password_hash(htmlspecialchars($_POST["password"]));
+			$password = password_hash(htmlspecialchars($_POST["password"], PASSWORD_DEFAULT));
 		} else {
 			header("Location: $newPage");
 			die();
