@@ -21,12 +21,13 @@ catch (PDOException $ex)
 	echo 'Error!: ' . $ex->getMessage();
 	die();
 }
-include 'back.html';
 ?>
 <html>
 	<body>
 		<form>
-			
+			<p>Username<br><input type="text" name="username" placeholder="Username"></p>
+			<p>Password<br><input type="password" name="password" placeholder="Password"></p>
+			<p><input type="submit" value="Log in"></p>
 		</form>
 	</body>
 </html>
