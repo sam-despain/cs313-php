@@ -32,7 +32,7 @@ include 'back.html';
 		foreach($db->query($myQuery) as $row) {
 			$myName = $row['username'];
 		}
-		if () {
+		if (isset($_SESSION['username'])) {
 			echo "<h1>Welcome, $myName.</h1>";
 		} else {
 			header("Location: teamActivity07-signin.php");
