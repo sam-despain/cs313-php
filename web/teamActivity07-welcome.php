@@ -25,8 +25,6 @@ include 'back.html';
 ?>
 <html>
 	<body>
-		<form action="teamActivity07-storeAccount.php" type="post">
-			
-		</form>
+		
 	</body>
 </html>

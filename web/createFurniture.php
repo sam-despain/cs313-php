@@ -51,9 +51,8 @@ echo "<h1>Be sure to use a unique SKU number.</h1>";
 			$stmt->execute();
 		}
 		$newPage = "furnitureZone.php";
-		header ("Location: $newPage");
+		header("Location: $newPage");
 		die();
-		echo "All's good?";
 		?>
 	</body>
 </html>
