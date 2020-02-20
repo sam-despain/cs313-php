@@ -33,5 +33,6 @@ catch (PDOException $ex)
 			<p>Retype password<br><input type="password" name="pwrepeat" placeholder="Retype Password"></p>
 			<p><input type="submit" value="Create account"></p>
 		</form>
+		<p>Already a member? <a href="teamActivity07-signin.php">Sign in here.</a></p>
 	</body>
 </html>
