@@ -29,7 +29,10 @@ catch (PDOException $ex)
 			<p>Username<br><input type="text" name="username" placeholder="Username"></p>
 			<p>Password<br><input type="password" name="password" placeholder="Password"></p>
 			<p><input type="submit" value="Log in"></p>
-			<p><a href="teamActivity07-signup.php">Back to sign-up</a></p>
 		</form>
+		<p><a href="teamActivity07-signup.php">Back to sign-up</a></p>
+		<?php
+		echo $_SESSION['username'];
+		?>
 	</body>
 </html>
