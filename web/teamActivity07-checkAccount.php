@@ -31,7 +31,7 @@ catch (PDOException $ex)
 		$_SESSION["username"] = $username;
 		$hash = '';
 		$password = htmlspecialchars($_POST["password"]);
-		$searchQuery = "SELECT username, password FROM login WHERE username = '$username';";
+		$searchQuery = "SELECT username, password FROM accounts WHERE username = '$username';";
 		foreach ($db->query($searchQuery) as $row) {
 			$hash = $row['password'];
 		}

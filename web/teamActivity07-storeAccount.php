@@ -34,7 +34,7 @@ catch (PDOException $ex)
 			header("Location: $newPage");
 			die();
 		}
-		$myQuery = "INSERT INTO login (username, password) VALUES ('$username', '$password');";
+		$myQuery = "INSERT INTO accounts (username, password) VALUES ('$username', '$password');";
 		$stmt = $db->prepare($myQuery);
 		$stmt->execute();
 		$newPage = 'teamActivity07-signin.php';

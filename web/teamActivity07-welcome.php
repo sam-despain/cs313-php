@@ -28,7 +28,7 @@ include 'back.html';
 	<body>
 		<?php
 		$myName = '';
-		$myQuery = "SELECT username FROM login WHERE username = $_SESSION['username']";
+		$myQuery = "SELECT username FROM accounts WHERE username = $_SESSION['username']";
 		foreach($db->query($myQuery) as $row) {
 			$myName = $row['username'];
 		}
