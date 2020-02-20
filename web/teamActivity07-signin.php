@@ -31,8 +31,5 @@ catch (PDOException $ex)
 			<p><input type="submit" value="Log in"></p>
 		</form>
 		<p><a href="teamActivity07-signup.php">Back to sign-up</a></p>
-		<?php
-		echo $_SESSION['username'];
-		?>
 	</body>
 </html>
