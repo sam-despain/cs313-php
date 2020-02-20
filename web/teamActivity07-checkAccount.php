@@ -22,22 +22,26 @@ catch (PDOException $ex)
 	echo 'Error!: ' . $ex->getMessage();
 	die();
 }
-include 'back.html';
 ?>
 <html>
 	<body>
 		<?php
-		$myName = '';
-		$myQuery = "SELECT username FROM login WHERE username = $_SESSION['username']";
-		foreach($db->query($myQuery) as $row) {
-			$myName = $row['username'];
+		$newPage = 'teamActivity07-signin.php';
+		$username = htmlspecialchars($_POST["username"]);
+		$_SESSION["username"] = $username;
+		$hash = '';
+		$password = htmlspecialchars($_POST["password"]);
+		$searchQuery = "SELECT username, password FROM login WHERE username = '$username';";
+		foreach ($db->query($searchQuery) as $row) {
+			$hash = $row['password'];
 		}
-		if () {
-			echo "<h1>Welcome, $myName.</h1>";
-		} else {
-			header("Location: teamActivity07-signin.php");
+		if (password_verify($password, $hash)) {
+			$newPage = 'teamActivity07-welcome.php';
+			header("Location: $newPage");
 			die();
 		}
+		header("Location: $newPage");
+		die();
 		?>
 	</body>
 </html>
