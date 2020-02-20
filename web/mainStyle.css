@@ -101,6 +101,7 @@ input[type=submit] {
 }
 input[type=number] {
 	width: 110px;
+	cursor: text;
 	text-align: center;
 	background-color: #fff;
 	border-style: solid;
@@ -111,6 +112,7 @@ input[type=text], [type=password] {
 	background-color: #fff;
 	border-style: solid;
 	border-color: #aaa;
+	cursor: text;
 	border-width: 1px;
 }
 .radioCheck {
