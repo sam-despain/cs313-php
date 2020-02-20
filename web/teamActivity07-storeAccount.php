@@ -39,6 +39,7 @@ catch (PDOException $ex)
 		$stmt = $db->prepare($myQuery);
 		$stmt->bindValue(':username', $username, PDO::PARAM_STR);
 		$stmt->bindValue(':password', $password, PDO::PARAM_STR);
+		echo $myQuery;
 		$stmt->execute();
 		$newPage = 'teamActivity07-welcome.php';
 		header("Location: $newPage");
