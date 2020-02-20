@@ -36,6 +36,7 @@ catch (PDOException $ex)
 			die();
 		}
 		$myQuery = "INSERT INTO login (username, password) VALUES (':username', ':password');";
+		echo $myQuery;
 		$stmt = $db->prepare($myQuery);
 		$stmt->bindValue(':username', $username, PDO::PARAM_STR);
 		$stmt->bindValue(':password', $password, PDO::PARAM_STR);
