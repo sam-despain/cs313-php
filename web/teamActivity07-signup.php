@@ -28,9 +28,10 @@ catch (PDOException $ex)
 	</head>
 	<body>
 		<form action="teamActivity07-storeAccount.php" method="post">
-			<input type="text" name="username" placeholder="Username">
-			<input type="password" name="password" placeholder="Password">
-			<input type="password" name="pwrepeat" placeholder="Repeat Password">
+			<p>Username:<input type="text" name="username" placeholder="Username"></p>
+			<p>Password:<input type="password" name="password" placeholder="Password"></p>
+			<p>Retype password:<input type="password" name="pwrepeat" placeholder="Retype Password"></p>
+			<p><input type="submit" value="Create account"></p>
 		</form>
 	</body>
 </html>
